@@ -1,11 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { HomePage } from "./pages/HomePage";
 import { ThemeWrapper } from "./theme";
+import { Navigation } from "./router/Navigation";
 
 function App() {
   return (
     <ThemeWrapper>
-      <HomePage />
+      <Navigation />
     </ThemeWrapper>
   );
 }
