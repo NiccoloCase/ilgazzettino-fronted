@@ -1,4 +1,5 @@
 import React from "react";
+import { palette } from "../config";
 
 export const HomePage: React.FC = () => {
   const topics = [
@@ -122,7 +123,12 @@ export const HomePage: React.FC = () => {
       </nav>
 
       {/* Region Tabs */}
-      <div className="bg-warning text-white text-center py-2">
+      <div
+        className=" text-white text-center py-2"
+        style={{
+          background: palette.primary,
+        }}
+      >
         {regions.map((r, i) => (
           <a
             href="#"
@@ -170,9 +176,17 @@ export const HomePage: React.FC = () => {
       </div>
 
       {/* Promo Banner */}
-      <div className="bg-warning p-3 fixed-bottom d-flex justify-content-between align-items-center">
+      <div
+        className="p-3 fixed-bottom d-flex justify-content-between align-items-center"
+        style={{
+          background:
+            "linear-gradient(45deg, rgb(253, 204, 3) 0px, rgb(253, 204, 3) 100%)",
+        }}
+      >
         <div>
-          <strong>Promo 3 Mesi a 9€</strong>
+          <h4>
+            <strong>Promo 3 Mesi a 9€</strong>
+          </h4>
           <br />
           Per te l'Edizione Digitale e tutto il Sito
         </div>

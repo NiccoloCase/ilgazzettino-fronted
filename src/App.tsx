@@ -1,8 +1,13 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { HomePage } from "./pages/HomePage";
+import { ThemeWrapper } from "./theme";
 
 function App() {
-  return <HomePage />;
+  return (
+    <ThemeWrapper>
+      <HomePage />
+    </ThemeWrapper>
+  );
 }
 
 export default App;
