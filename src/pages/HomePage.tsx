@@ -91,12 +91,20 @@ export const HomePage: React.FC = () => {
 
       {/* Logo */}
       <div className="text-center my-3">
-        <h1
+        {/* <h1
           className="m-0"
           style={{ fontFamily: "serif", fontSize: "2rem", color: "#005A9C" }}
         >
           IL GAZZETTINO<span style={{ color: "orange" }}>.it</span>
-        </h1>
+        </h1> */}
+
+        <img
+          src="/assets/logo.png"
+          alt="ilgazzettino"
+          style={{
+            height: "35px",
+          }}
+        />
       </div>
 
       {/* Topics */}
