@@ -11,6 +11,8 @@ import Hamburger from "hamburger-react";
 import { faFacebookF, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { palette } from "../../config";
 
+import "./Navbar.scss";
+
 const GazzettinoNavbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -40,53 +42,74 @@ const GazzettinoNavbar: React.FC = () => {
 
   return (
     <>
-      {/* Top bar */}
       <header
-        className="d-flex justify-content-between align-items-center px-3 py-1 border-bottom bg-white"
+        className="Navbar border-bottom bg-white w-100 py-1 position-relative"
         style={{ fontSize: "14px" }}
       >
-        <div className="d-flex align-items-center">
-          <Hamburger
-            toggled={menuOpen}
-            toggle={setMenuOpen}
-            size={20}
-            label="Menu"
-          />
-
-          <span className="fw-bold d-none d-md-inline">MENU</span>
-
-          <FontAwesomeIcon icon={faSearch} className="ms-4 " fontSize={17} />
-
-          <span className="ms-1 text-secondary">CERCA</span>
-        </div>
-        <div className="text-secondary">{updateTimeText}</div>
-        <div className="d-flex align-items-center">
-          <FontAwesomeIcon icon={faBell} fontSize={25} color="#CCCCCC" />
-
-          <div className="d-flex" style={{ paddingLeft: "2rem" }}>
-            <a
-              href="https://www.facebook.com/gazzettino.it"
-              title="seguici su facebook"
-              className="me-3"
-            >
-              <FontAwesomeIcon
-                icon={faFacebookF}
-                color="#3C5997"
-                fontSize={20}
+        <Container fluid>
+          <div className="d-flex justify-content-between align-items-center position-relative">
+            {/* Colonna sinistra */}
+            <div className="d-flex align-items-center z-1">
+              <Hamburger
+                toggled={menuOpen}
+                toggle={setMenuOpen}
+                size={20}
+                label="Menu"
               />
-            </a>
-            <a
-              href="https://x.com/Gazzettino"
-              title="seguici su twitter"
-              className="me-3"
-            >
-              <FontAwesomeIcon icon={faXTwitter} color="#000" fontSize={20} />
-            </a>
-          </div>
+              <span className="fw-bold d-none d-md-inline ms-2">MENU</span>
+              <FontAwesomeIcon icon={faSearch} className="ms-4" fontSize={17} />
+              <span className="ms-1 text-secondary">CERCA</span>
+            </div>
 
-          <span className=" me-3">ACCEDI</span>
-          <span style={{ color: palette.primary }}>PROMO FLASH</span>
-        </div>
+            {/* Testo centrale assoluto */}
+            <div
+              className="position-absolute start-50 translate-middle-x "
+              style={{
+                pointerEvents: "none",
+                fontWeight: 400,
+                fontSize: "13px",
+                color: "rgb(94, 94, 94) !important",
+              }}
+            >
+              {updateTimeText}
+            </div>
+
+            {/* Colonna destra */}
+            <div className="d-flex align-items-center z-1">
+              <FontAwesomeIcon icon={faBell} fontSize={25} color="#CCCCCC" />
+              <div className="d-flex ps-5">
+                <a
+                  href="https://www.facebook.com/gazzettino.it"
+                  title="seguici su facebook"
+                  className="me-3"
+                >
+                  <FontAwesomeIcon
+                    icon={faFacebookF}
+                    color="#3C5997"
+                    fontSize={17}
+                  />
+                </a>
+                <a
+                  href="https://x.com/Gazzettino"
+                  title="seguici su twitter"
+                  className="me-3"
+                >
+                  <FontAwesomeIcon
+                    icon={faXTwitter}
+                    color="#000"
+                    fontSize={20}
+                  />
+                </a>
+              </div>
+              <span className="me-3">
+                <small>ACCEDI</small>
+              </span>
+              <span style={{ color: palette.primary }} className="fw-bold">
+                <small>PROMO FLASH</small>
+              </span>
+            </div>
+          </div>
+        </Container>
       </header>
 
       {/* Mobile Dropdown Menu */}

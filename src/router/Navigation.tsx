@@ -4,15 +4,16 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import { HomePage } from "../pages/HomePage";
+import { HomePage } from "../pages/Home";
 import { NotFoundPage } from "../pages/NotFoundPage";
+import { Layout } from "./Layout";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <>
+    <Route element={<Layout />}>
       <Route path="/" element={<HomePage />} />
       <Route path="*" element={<NotFoundPage />} />
-    </>
+    </Route>
   )
 );
 

@@ -1,7 +1,8 @@
 import React from "react";
-import { palette } from "../config";
-import { Navbar } from "react-bootstrap";
-import GazzettinoNavbar from "../components/Navbar";
+import { palette } from "../../config";
+import GazzettinoNavbar from "../../components/Navbar";
+
+import "./HomePage.scss";
 
 export const HomePage: React.FC = () => {
   const topics = [
@@ -68,39 +69,9 @@ export const HomePage: React.FC = () => {
   ];
 
   return (
-    <div className="container-fluid p-0">
-      {/* Header */}
-      <GazzettinoNavbar />
-      {/* <div className="bg-light d-flex justify-content-between align-items-center p-2 border-bottom">
-        <div className="d-flex align-items-center">
-          <button className="btn btn-link p-0 me-3">☰ MENU</button>
-          <input
-            className="form-control form-control-sm"
-            type="search"
-            placeholder="CERCA"
-          />
-        </div>
-        <div className="text-center small">Sabato 12 Aprile - agg. 11:29</div>
-        <div>
-          <a href="#">🔔</a>{" "}
-          <a href="#" className="mx-2">
-            ACCEDI
-          </a>{" "}
-          <a href="#" className="text-danger">
-            PROMO FLASH
-          </a>
-        </div>
-      </div> */}
-
+    <div className="HomePage container-fluid ">
       {/* Logo */}
       <div className="text-center my-3">
-        {/* <h1
-          className="m-0"
-          style={{ fontFamily: "serif", fontSize: "2rem", color: "#005A9C" }}
-        >
-          IL GAZZETTINO<span style={{ color: "orange" }}>.it</span>
-        </h1> */}
-
         <img
           src="/assets/logo.png"
           alt="ilgazzettino"
@@ -146,7 +117,7 @@ export const HomePage: React.FC = () => {
             key={i}
             className="mx-2 text-white text-uppercase small text-decoration-none"
           >
-            {r}
+            <small>{r}</small>
           </a>
         ))}
       </div>
