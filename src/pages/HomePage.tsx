@@ -1,5 +1,7 @@
 import React from "react";
 import { palette } from "../config";
+import { Navbar } from "react-bootstrap";
+import GazzettinoNavbar from "../components/Navbar";
 
 export const HomePage: React.FC = () => {
   const topics = [
@@ -68,7 +70,8 @@ export const HomePage: React.FC = () => {
   return (
     <div className="container-fluid p-0">
       {/* Header */}
-      <div className="bg-light d-flex justify-content-between align-items-center p-2 border-bottom">
+      <GazzettinoNavbar />
+      {/* <div className="bg-light d-flex justify-content-between align-items-center p-2 border-bottom">
         <div className="d-flex align-items-center">
           <button className="btn btn-link p-0 me-3">☰ MENU</button>
           <input
@@ -87,7 +90,7 @@ export const HomePage: React.FC = () => {
             PROMO FLASH
           </a>
         </div>
-      </div>
+      </div> */}
 
       {/* Logo */}
       <div className="text-center my-3">
@@ -154,32 +157,34 @@ export const HomePage: React.FC = () => {
       {/* News Grid */}
       <div className="container my-4">
         <div className="row g-4">
-          {news.map((item, i) => (
-            <div className="col-12 col-md-6 col-lg-3" key={i}>
-              <div className="card h-100">
-                <div className="position-relative">
-                  <img
-                    src={item.img}
-                    className="card-img-top"
-                    alt={item.title.slice(0, 20)}
-                  />
-                  {item.video && (
-                    <span className="position-absolute top-0 start-0 bg-dark text-white px-2 py-1 small">
-                      ▶
-                    </span>
-                  )}
-                </div>
-                <div className="card-body">
-                  <p className="card-text small fw-bold">{item.title}</p>
-                  {item.author && (
-                    <p className="card-text text-muted small">
-                      di {item.author}
-                    </p>
-                  )}
+          {[...news, ...news, ...news, ...news, ...news, ...news].map(
+            (item, i) => (
+              <div className="col-12 col-md-6 col-lg-3" key={i}>
+                <div className="card h-100">
+                  <div className="position-relative">
+                    <img
+                      src={item.img}
+                      className="card-img-top"
+                      alt={item.title.slice(0, 20)}
+                    />
+                    {item.video && (
+                      <span className="position-absolute top-0 start-0 bg-dark text-white px-2 py-1 small">
+                        ▶
+                      </span>
+                    )}
+                  </div>
+                  <div className="card-body">
+                    <p className="card-text small fw-bold">{item.title}</p>
+                    {item.author && (
+                      <p className="card-text text-muted small">
+                        di {item.author}
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            )
+          )}
         </div>
       </div>
 
