@@ -1,53 +1,43 @@
 import React from "react";
+import "./Footer.scss";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="mt-5 border-top pt-3 text-muted small">
-      <div className="container text-center">
-        <div className="d-flex flex-wrap justify-content-center gap-3 mb-3">
-          <span>CALTAGIRONE EDITORE</span>
-          <span>IL MESSAGGERO</span>
-          <span>IL MATTINO</span>
-          <span>CORRIERE ADRIATICO</span>
-          <span>QUOTIDIANO DI PUGLIA</span>
-          <span>LEGGO</span>
+    <footer className="Footer mt-5 text-muted small">
+      <div className="row">
+        <div className="col-8 text-left left-links">
+          <a href="#">CALTAGIRONE EDITORE</a>
+          <a href="#">IL MESSAGGERO</a>
+          <a href="#">IL MATTINO</a>
+          <a href="#">CORRIERE ADRIATICO</a>
+          <a href="#">QUOTIDIANO DI PUGLIA</a>
+          <a href="#">LEGGO</a>
         </div>
 
-        <div className="d-flex flex-wrap justify-content-center gap-3 mb-3">
-          <a href="#" className="text-muted text-decoration-none">
-            Privacy Policy
-          </a>
-          <span className="vr" />
-          <a href="#" className="text-muted text-decoration-none">
-            Cookie Policy
-          </a>
-          <span className="vr" />
-          <a href="#" className="text-muted text-decoration-none">
-            Informazioni legali
-          </a>
-          <span className="vr" />
-          <a href="#" className="text-muted text-decoration-none">
-            Preferenze cookie
-          </a>
-          <span className="vr" />
-          <a href="#" className="text-muted text-decoration-none">
-            Whistleblowing
-          </a>
-        </div>
+        <div className="col-4 text-right right-links ">
+          <a href="#">Privacy Policy </a>
 
-        <div className="mb-2">
-          <span>
-            Società editrice © 2025 Il Gazzettino | C.F. 00744300286 P. IVA
-            02742610278 |{" "}
-            <a href="#" className="text-muted text-decoration-none">
-              CONTATTI
-            </a>{" "}
-            |{" "}
-            <a href="#" className="text-muted text-decoration-none">
-              PUBBLICITÁ
-            </a>
-          </span>
+          <a href="#">Cookie Policy</a>
+
+          <a href="#">Informazioni legali</a>
+
+          <a href="#">Preferenze cookie</a>
+
+          <a href="#">Whistleblowing</a>
         </div>
+      </div>
+
+      <div className="mt-4 mb-2 bottom-links">
+        <span>
+          Società editrice © 2025 Il Gazzettino
+          <span>C.F. 00744300286 P. IVA 02742610278</span>{" "}
+          <a href="#" className="text-muted text-decoration-none">
+            CONTATTI
+          </a>{" "}
+          <a href="#" className="text-muted text-decoration-none">
+            PUBBLICITÁ
+          </a>
+        </span>
       </div>
     </footer>
   );
