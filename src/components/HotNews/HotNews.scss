@@ -1,6 +1,14 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
 .hot-news {
   padding: 2rem 0;
   margin: 0 -0.5em;
+
+  // Nel sito originale su mobile questo carosello non è presente
+  // create scss media query for md
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
 
   &-item {
     border-radius: 0;
