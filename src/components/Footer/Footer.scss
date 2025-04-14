@@ -8,30 +8,38 @@
     text-decoration: none;
     color: var(--dark-grey);
 
-    &:hover {
+    &:hover,
+    &:focus {
       text-decoration: underline;
+      outline: none;
     }
   }
 
   .left-links {
-    a {
-      margin-right: 1rem;
+    ul {
+      margin: 0;
+      padding: 0;
     }
   }
 
   .right-links {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+      line-height: 16px;
+    }
 
-    a {
+    li {
       position: relative;
-      margin-right: 0.25rem;
-      padding-right: 0.25rem;
-      margin-bottom: 0.25rem;
+      margin-right: 0.2rem;
+      padding-right: 0.2rem;
+      margin-bottom: 0.2rem;
 
-      &::after {
+      &:not(:last-child)::after {
         content: "";
         position: absolute;
         right: 0;
@@ -41,10 +49,6 @@
         border-right: 1px solid var(--dark-grey);
       }
     }
-
-    a:last-of-type::after {
-      content: none;
-    }
   }
 
   .bottom-links {
@@ -53,14 +57,21 @@
     justify-content: flex-end;
     flex-wrap: wrap;
 
-    a {
-      margin-right: 0.5rem;
-      margin-bottom: 0.5rem;
+    address {
+      font-style: normal;
+      margin: 0;
     }
 
-    span {
-      span,
-      a {
+    p {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 0;
+    }
+
+    span,
+    a {
+      &:not(:first-child) {
         border-left: 1px solid var(--dark-grey);
         margin-left: 0.5rem;
         padding-left: 0.5rem;
