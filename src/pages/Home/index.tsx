@@ -3,6 +3,7 @@ import { palette } from "../../config";
 import GazzettinoNavbar from "../../components/Navbar";
 
 import "./HomePage.scss";
+import { PromoBanner } from "../../components/PromoBanner";
 
 export const HomePage: React.FC = () => {
   const topics = [
@@ -76,19 +77,19 @@ export const HomePage: React.FC = () => {
           src="/assets/logo.png"
           alt="ilgazzettino"
           style={{
-            height: "35px",
+            height: "39px",
           }}
         />
       </div>
 
       {/* Topics */}
-      <div className="text-center small border-bottom py-2">
-        <strong>Temi caldi:</strong>{" "}
+      <div className="text-center small  border-top border-bottom py-0 mt-1">
+        <span style={{ color: "#000" }}>Temi caldi:</span>
         {topics.map((t, i) => (
           <a
             href="#"
             key={i}
-            className="mx-1 text-decoration-none text-primary"
+            className="mx-1 text-decoration-none text-primary link"
           >
             {t}
           </a>
@@ -159,23 +160,7 @@ export const HomePage: React.FC = () => {
         </div>
       </div>
 
-      {/* Promo Banner */}
-      <div
-        className="p-3 fixed-bottom d-flex justify-content-between align-items-center"
-        style={{
-          background:
-            "linear-gradient(45deg, rgb(253, 204, 3) 0px, rgb(253, 204, 3) 100%)",
-        }}
-      >
-        <div>
-          <h4>
-            <strong>Promo 3 Mesi a 9€</strong>
-          </h4>
-          <br />
-          Per te l'Edizione Digitale e tutto il Sito
-        </div>
-        <button className="btn btn-dark">ABBONATI ORA</button>
-      </div>
+      <PromoBanner />
     </div>
   );
 };
