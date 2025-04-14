@@ -1,0 +1,51 @@
+.fake-video-ad {
+  z-index: 10000;
+  bottom: 1rem;
+  right: 1rem;
+  position: fixed;
+  aspect-ratio: 1100/652;
+  height: 18rem;
+  background-color: #dddddd;
+  border: #909090 solid 0.1px;
+
+  .video-frame {
+    display: block;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .overlay-text {
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    font-size: 16px;
+    font-weight: 500;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .mute-icon {
+    font-size: 18px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    margin-left: 1rem;
+  }
+
+  .countdown {
+    white-space: nowrap;
+  }
+
+  .progress-bar-container {
+    height: 4px;
+    background-color: #fff;
+    overflow: hidden;
+
+    .progress-bar-fill {
+      height: 100%;
+      background-color: #ccc;
+      transition: width 0.5s ease;
+    }
+  }
+}

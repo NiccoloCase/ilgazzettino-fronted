@@ -6,6 +6,7 @@ import "./HomePage.scss";
 import { PromoBanner } from "../../components/PromoBanner";
 import { HotNews } from "../../components/HotNews";
 import { HomePageMainSection } from "./MainSection";
+import { VideoAD } from "../../components/VideoAD";
 
 export const HomePage: React.FC = () => {
   const topics = [
@@ -167,8 +168,8 @@ export const HomePage: React.FC = () => {
       </div> */}
 
       <HomePageMainSection />
-
       <PromoBanner />
+      <VideoAD />
     </div>
   );
 };
