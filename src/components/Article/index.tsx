@@ -3,6 +3,7 @@ import { faReply } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Article.scss";
 import { noAuto } from "@fortawesome/fontawesome-svg-core";
+import { useMemo } from "react";
 
 export interface Article {
   category: string;
@@ -18,6 +19,11 @@ export const ArticleComponent: React.FC<{
   noBorderBottom?: boolean;
 }> = ({ article, noBorderBottom }) => {
   const { category, imgs, title, others, author, aside } = article;
+
+  const facebookRepliesCount = useMemo(() => {
+    const repliesCount = Math.floor(Math.random() * 100);
+    return repliesCount;
+  }, []);
 
   const renderImage = () => {
     return (
@@ -47,19 +53,24 @@ export const ArticleComponent: React.FC<{
             </small>
           </p>
           <div className="flex-grow-1 d-flex justify-content-end">
-            <a href="https://www.facebook.com/gazzettino.it" className="me-3">
+            <a
+              href="https://www.facebook.com/gazzettino.it"
+              className="me-2 social-icon facebook"
+            >
               <FontAwesomeIcon
                 icon={faFacebookF}
-                className="social-icon facebook"
                 fontSize={17}
+                style={{ marginRight: "3px" }}
               />
+              {facebookRepliesCount > 0 && (
+                <small>{facebookRepliesCount}</small>
+              )}
             </a>
-            <a href="https://x.com/Gazzettino" className="me-3">
-              <FontAwesomeIcon
-                icon={faXTwitter}
-                className="social-icon twitter"
-                fontSize={17}
-              />
+            <a
+              href="https://x.com/Gazzettino"
+              className="me-2 social-icon twitter"
+            >
+              <FontAwesomeIcon icon={faXTwitter} fontSize={17} />
             </a>
             <a href="#" className="me-3">
               <FontAwesomeIcon
