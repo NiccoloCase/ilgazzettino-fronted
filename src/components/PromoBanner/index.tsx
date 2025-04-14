@@ -5,11 +5,7 @@ import { useState } from "react";
 import { enqueueSnackbar } from "notistack";
 
 export const PromoBanner = () => {
-  const [isVisible, setIsVisible] = useState(
-    // TODO: before production set to true
-
-    false
-  );
+  const [isVisible, setIsVisible] = useState(true);
 
   const subscribe = () => {
     enqueueSnackbar("Grazie per esserti iscritto alla nostra newsletter!", {

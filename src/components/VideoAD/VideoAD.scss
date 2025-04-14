@@ -6,11 +6,18 @@
   aspect-ratio: 1100/652;
   height: 18rem;
   background-color: #dddddd;
-  border: #909090 solid 0.1px;
+  border: 1px solid #909090;
+  overflow: hidden;
+
+  .video-ad-figure {
+    margin: 0;
+    height: 100%;
+  }
 
   .video-frame {
     display: block;
-    height: auto;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
   }
 
@@ -19,7 +26,6 @@
     background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
     font-size: 16px;
     font-weight: 500;
-
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -31,6 +37,11 @@
     background: transparent;
     color: #fff;
     margin-left: 1rem;
+    cursor: pointer;
+
+    &:focus {
+      outline-offset: 2px;
+    }
   }
 
   .countdown {

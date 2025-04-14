@@ -168,8 +168,11 @@ export const HomePage: React.FC = () => {
       </div> */}
 
       <HomePageMainSection />
+      {/* 
+      
+      TODO: active before prod
       <PromoBanner />
-      <VideoAD />
+      <VideoAD /> */}
     </div>
   );
 };
