@@ -36,8 +36,6 @@ export const MAIN_NEWS = [
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     others: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
     ],
     author: "Giovanni Bianchi",
     aside: true,

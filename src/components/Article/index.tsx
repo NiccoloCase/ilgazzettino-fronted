@@ -1,6 +1,7 @@
 import { faFacebookF, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faReply } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./Article.scss";
 
 export interface Article {
   category: string;
@@ -84,6 +85,14 @@ export const ArticleComponent: React.FC<{
     );
   };
 
+  const renderTitle = () => {
+    return (
+      <h1 className="news-title">
+        <a href="#">{title}</a>
+      </h1>
+    );
+  };
+
   if (aside)
     return (
       <article className="main-article">
@@ -93,9 +102,7 @@ export const ArticleComponent: React.FC<{
         <div className="row">
           <div className="col-md-6">{renderImage()}</div>
           <div className="col-md-6">
-            <h1 className="news-title">
-              <a href="#">{title}</a>
-            </h1>
+            {renderTitle()}
             {renderOtherNews()}
             {renderFooter()}
           </div>
@@ -108,9 +115,7 @@ export const ArticleComponent: React.FC<{
         <header>
           <p className="section-title mb-1">{category}</p>
           {renderImage()}
-          <h1 className="news-title">
-            <a href="#">{title}</a>
-          </h1>
+          {renderTitle()}
         </header>
         {renderOtherNews()}
         {renderFooter()}
