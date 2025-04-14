@@ -1,54 +1,87 @@
-import { faFacebookF, faXTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faReply } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Article, ArticleComponent } from "../../components/Article";
+import { ArticleCarousel } from "../../components/ArticleCarousel";
+
+export interface GridItem {
+  type: "article" | "article-carousel";
+  data: Article | ArticleCarousel;
+  category: string;
+  id: number;
+}
 
 export const MAIN_NEWS = [
   {
-    category: "MESTRE",
-    imgs: [{ src: "https://placehold.co/800x250", alt: "lorem ipsum" }],
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    others: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
-    ],
-    author: "Redazione Web",
+    id: 1,
+    type: "article",
+    data: {
+      category: "MESTRE",
+      imgs: [{ src: "https://placehold.co/800x250", alt: "lorem ipsum" }],
+      title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      others: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+      ],
+      author: "Redazione Web",
+    },
   },
   {
-    category: "CAMPAGNA LUPIA",
-    imgs: [
-      { src: "https://placehold.co/400x250", alt: "lorem ipsum" },
-      { src: "https://placehold.co/400x250", alt: "lorem ipsum" },
-    ],
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    others: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
-    ],
-    author: "Mario Rossi",
+    id: 2,
+    type: "article",
+    data: {
+      category: "CAMPAGNA LUPIA",
+      imgs: [
+        { src: "https://placehold.co/400x250", alt: "lorem ipsum" },
+        { src: "https://placehold.co/400x250", alt: "lorem ipsum" },
+      ],
+      title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      others: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+      ],
+      author: "Mario Rossi",
+    },
   },
-
   {
-    category: "POLITICA",
-    imgs: [{ src: "https://placehold.co/227x125", alt: "lorem ipsum" }],
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    others: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
-    ],
-    author: "Giovanni Bianchi",
-    aside: true,
+    id: 3,
+    type: "article",
+    data: {
+      category: "POLITICA",
+      imgs: [{ src: "https://placehold.co/227x125", alt: "lorem ipsum" }],
+      title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      others: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+      ],
+      author: "Giovanni Bianchi",
+      aside: true,
+    },
   },
-] as Article[];
+] as GridItem[];
 
 export const HomePageMainSection = () => {
+  const renderGridItem = (item: GridItem) => {
+    switch (item.type) {
+      case "article":
+        return (
+          <ArticleComponent key={item.id} article={item.data as Article} />
+        );
+      case "article-carousel":
+        return (
+          <ArticleCarousel
+            key={item.id}
+            articles={item.data as ArticleCarousel}
+            title={item.category}
+          />
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
     <main className="container my-4 d-flex">
       <section className="flex-grow-1 pe-4">
-        {MAIN_NEWS.map((news, i) => (
-          <ArticleComponent article={news} key={i} />
-        ))}
+        {MAIN_NEWS.map(renderGridItem)}
       </section>
 
       {/* Aside Content */}
