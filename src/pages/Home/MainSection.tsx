@@ -1,6 +1,7 @@
 import { faFacebookF, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faReply } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Article, ArticleComponent } from "../../components/Article";
 
 export const MAIN_NEWS = [
   {
@@ -41,77 +42,14 @@ export const MAIN_NEWS = [
     author: "Giovanni Bianchi",
     aside: true,
   },
-];
+] as Article[];
 
 export const HomePageMainSection = () => {
   return (
     <main className="container my-4 d-flex">
       <section className="flex-grow-1 pe-4">
         {MAIN_NEWS.map((news, i) => (
-          <article className="main-article" key={i}>
-            <header>
-              <p className="section-title mb-1">{news.category}</p>
-              <div className="d-flex gap-2 mb-2 w-100">
-                {news.imgs.map((img, index) => (
-                  <img
-                    key={index}
-                    src={img.src}
-                    alt={img.alt}
-                    className="img-fluid"
-                    style={{
-                      width: `${100 / news.imgs.length}%`,
-                    }}
-                  />
-                ))}
-              </div>
-              <h1 className="news-title">
-                <a href="#">{news.title}</a>
-              </h1>
-            </header>
-            <p className="text-muted mt-2 other-news">
-              {news.others.map((other, index) => (
-                <a key={index} href="#">
-                  <strong className="bullet">&#8226;</strong> {other}{" "}
-                </a>
-              ))}
-            </p>
-
-            <div className="d-flex ">
-              <p>
-                <small>
-                  <em>di {news.author}</em>
-                </small>
-              </p>
-
-              <div className="flex-grow-1 d-flex justify-content-end">
-                <a
-                  href="https://www.facebook.com/gazzettino.it"
-                  className="me-3"
-                >
-                  <FontAwesomeIcon
-                    icon={faFacebookF}
-                    color="#3C5997"
-                    fontSize={17}
-                  />
-                </a>
-                <a href="https://x.com/Gazzettino" className="me-3">
-                  <FontAwesomeIcon
-                    icon={faXTwitter}
-                    color="#505050"
-                    fontSize={17}
-                  />
-                </a>
-                <a href="#" className="me-3">
-                  <FontAwesomeIcon
-                    icon={faReply}
-                    color="rgb(222, 222, 222)"
-                    fontSize={17}
-                    flip="horizontal"
-                  />
-                </a>
-              </div>
-            </div>
-          </article>
+          <ArticleComponent article={news} key={i} />
         ))}
       </section>
 
