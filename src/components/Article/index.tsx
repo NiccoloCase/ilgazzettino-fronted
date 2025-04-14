@@ -2,6 +2,7 @@ import { faFacebookF, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faReply } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Article.scss";
+import { noAuto } from "@fortawesome/fontawesome-svg-core";
 
 export interface Article {
   category: string;
@@ -14,7 +15,8 @@ export interface Article {
 
 export const ArticleComponent: React.FC<{
   article: Article;
-}> = ({ article }) => {
+  noBorderBottom?: boolean;
+}> = ({ article, noBorderBottom }) => {
   const { category, imgs, title, others, author, aside } = article;
 
   const renderImage = () => {
@@ -93,32 +95,45 @@ export const ArticleComponent: React.FC<{
     );
   };
 
-  if (aside)
-    return (
-      <article className="main-article">
-        <header>
-          <p className="section-title mb-1">{category}</p>
-        </header>
-        <div className="row">
-          <div className="col-md-6">{renderImage()}</div>
-          <div className="col-md-6">
-            {renderTitle()}
-            {renderOtherNews()}
-            {renderFooter()}
+  const renderContent = () => {
+    if (aside)
+      return (
+        <>
+          <header>
+            <p className="section-title mb-1">{category}</p>
+          </header>
+          <div className="row">
+            <div className="col-md-6">{renderImage()}</div>
+            <div className="col-md-6">
+              {renderTitle()}
+              {renderOtherNews()}
+              {renderFooter()}
+            </div>
           </div>
-        </div>
-      </article>
-    );
-  else
-    return (
-      <article className="main-article">
-        <header>
-          <p className="section-title mb-1">{category}</p>
-          {renderImage()}
-          {renderTitle()}
-        </header>
-        {renderOtherNews()}
-        {renderFooter()}
-      </article>
-    );
+        </>
+      );
+    else
+      return (
+        <article className="main-article">
+          <header>
+            <p className="section-title mb-1">{category}</p>
+            {renderImage()}
+            {renderTitle()}
+          </header>
+          {renderOtherNews()}
+          {renderFooter()}
+        </article>
+      );
+  };
+
+  return (
+    <article
+      style={{
+        borderBottom: noBorderBottom ? "none" : "rgb(222, 222, 222) 1px solid",
+      }}
+      className="main-article"
+    >
+      {renderContent()}
+    </article>
+  );
 };

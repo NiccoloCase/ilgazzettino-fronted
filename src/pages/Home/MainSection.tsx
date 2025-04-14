@@ -56,6 +56,47 @@ export const MAIN_NEWS = [
       aside: true,
     },
   },
+
+  {
+    id: 4,
+    type: "article-carousel",
+    data: {
+      title: "",
+      articles: [
+        {
+          category: "PADOVA",
+          imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          others: [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+          ],
+          author: "Giovanni Bianchi",
+          aside: false,
+        },
+        {
+          category: "POLITICA",
+          imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          others: [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+          ],
+          author: "Giovanni Bianchi",
+          aside: false,
+        },
+
+        {
+          category: "IL LUTTO",
+          imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          others: [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+          ],
+          author: "Giovanni Bianchi",
+          aside: false,
+        },
+      ],
+    },
+  },
 ] as GridItem[];
 
 export const HomePageMainSection = () => {
@@ -67,11 +108,7 @@ export const HomePageMainSection = () => {
         );
       case "article-carousel":
         return (
-          <ArticleCarousel
-            key={item.id}
-            articles={item.data as ArticleCarousel}
-            title={item.category}
-          />
+          <ArticleCarousel key={item.id} data={item.data as ArticleCarousel} />
         );
       default:
         return null;
