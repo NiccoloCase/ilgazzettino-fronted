@@ -3,10 +3,11 @@
 
   &-item {
     border-radius: 0;
-
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
 
-    &:hover {
+    &:hover,
+    &:focus {
       transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
@@ -15,6 +16,7 @@
       position: relative;
       img {
         width: 100%;
+        height: auto;
       }
       .hot-news-badge {
         position: absolute;
@@ -25,7 +27,7 @@
     }
   }
 
-  &-text {
+  &-title {
     font-size: 0.9rem;
     color: #000;
     margin-bottom: 0.1rem;
