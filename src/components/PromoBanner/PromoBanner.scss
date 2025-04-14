@@ -1,20 +1,32 @@
 .PromoBanner {
   padding: 1rem var(--padding-x);
 
-  h4 {
-    margin-bottom: 0.5rem;
+  .promo-content {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .promo-actions {
+    gap: 0.5rem;
   }
 
   .subscribe-button,
   .close-button {
     border: none;
+    cursor: pointer;
   }
 
   .subscribe-button {
-    background-color: #000;
+    background: rgba(0, 0, 0, 1);
     border-radius: 5rem;
     padding: 0.4rem 2.2rem;
     color: #fff;
+    transition: opacity 0.2s ease;
+
+    &:hover,
+    &:focus {
+      background: rgba(0, 0, 0, 0.7);
+    }
   }
 
   .close-button {
@@ -26,8 +38,9 @@
     width: 2.5rem;
     height: 2.5rem;
 
-    &:hover {
-      background-color: #000;
+    &:hover,
+    &:focus {
+      background: rgba(0, 0, 0, 0.7);
       color: #fff;
     }
   }
