@@ -5,6 +5,7 @@ import GazzettinoNavbar from "../../components/Navbar";
 import "./HomePage.scss";
 import { PromoBanner } from "../../components/PromoBanner";
 import { HotNews } from "../../components/HotNews";
+import { HomePageMainSection } from "./MainSection";
 
 export const HomePage: React.FC = () => {
   const topics = [
@@ -132,7 +133,7 @@ export const HomePage: React.FC = () => {
       <HotNews />
 
       {/* News Grid */}
-      <div className="container my-4">
+      {/* <div className="container my-4">
         <div className="row g-4">
           {[...news, ...news, ...news, ...news, ...news, ...news].map(
             (item, i) => (
@@ -163,7 +164,9 @@ export const HomePage: React.FC = () => {
             )
           )}
         </div>
-      </div>
+      </div> */}
+
+      <HomePageMainSection />
 
       <PromoBanner />
     </div>
