@@ -38,60 +38,50 @@ export const HotNews = () => {
 
   return (
     <section className="hot-news" aria-labelledby="hot-news-heading">
-      <div className="container">
-        <h2 id="hot-news-heading" className="visually-hidden">
-          Notizie di tendenza
-        </h2>
-        <div className="row">
-          {newsItems.map((item, index) => (
-            <article
-              key={item.id}
-              className="col-md-6 col-lg-3 mb-4 p-0"
-              aria-labelledby={`news-heading-${item.id}`}
-            >
-              <div
-                className="hot-news-item h-100"
-                style={{
-                  marginLeft: index === 0 ? "0" : ".5rem",
-                  marginRight:
-                    index === newsItems.length - 1 ? "0rem" : ".5rem",
-                }}
-                tabIndex={0}
-              >
-                <div className="img-wrapper">
-                  <img
-                    src={item.img}
-                    alt={item.alt}
-                    className="mb-2"
-                    width="150"
-                    height="100"
-                  />
+      <h2 id="hot-news-heading" className="visually-hidden">
+        Notizie di tendenza
+      </h2>
+      <div className="row g-0">
+        {newsItems.map((item) => (
+          <article
+            key={item.id}
+            className="col-md-6 col-lg-3"
+            aria-labelledby={`news-heading-${item.id}`}
+          >
+            <div className="hot-news-item h-100" tabIndex={0}>
+              <div className="img-wrapper">
+                <img
+                  src={item.img}
+                  alt={item.alt}
+                  className="img-fluid w-100"
+                  width="150"
+                  height="100"
+                />
 
-                  {item.hasBadge && (
-                    <div className="hot-news-badge">
-                      <img
-                        src="/assets/trend.png"
-                        alt="Trending news"
-                        aria-hidden="true"
-                      />
-                    </div>
-                  )}
-                </div>
-
-                <h3 id={`news-heading-${item.id}`} className="hot-news-title">
-                  {item.text}
-                </h3>
-
-                {item.author && (
-                  <p className="hot-news-author text-muted">
-                    <span className="visually-hidden">Autore: </span>
-                    {item.author}
-                  </p>
+                {item.hasBadge && (
+                  <div className="hot-news-badge">
+                    <img
+                      src="/assets/trend.png"
+                      alt="Trending news"
+                      aria-hidden="true"
+                    />
+                  </div>
                 )}
               </div>
-            </article>
-          ))}
-        </div>
+
+              <h3 id={`news-heading-${item.id}`} className="hot-news-title">
+                {item.text}
+              </h3>
+
+              {item.author && (
+                <p className="hot-news-author text-muted">
+                  <span className="visually-hidden">Autore: </span>
+                  {item.author}
+                </p>
+              )}
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );

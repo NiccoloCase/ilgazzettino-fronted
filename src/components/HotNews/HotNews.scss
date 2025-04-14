@@ -1,10 +1,13 @@
 .hot-news {
   padding: 2rem 0;
+  margin: 0 -0.5em;
 
   &-item {
     border-radius: 0;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     outline: none;
+
+    margin: 0 0.5rem;
 
     &:hover,
     &:focus {
