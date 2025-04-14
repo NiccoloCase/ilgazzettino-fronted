@@ -1,6 +1,21 @@
 .main-article {
   margin-bottom: 2rem;
 
+  &:hover {
+    .social-icon.facebook {
+      color: #3c5997;
+    }
+
+    .social-icon.twitter {
+      color: #000;
+    }
+  }
+
+  .social-icon {
+    color: rgb(222, 222, 222);
+    transition: color 0.3s ease;
+  }
+
   img {
     object-fit: cover;
     object-position: center;

@@ -50,14 +50,14 @@ export const ArticleComponent: React.FC<{
             <a href="https://www.facebook.com/gazzettino.it" className="me-3">
               <FontAwesomeIcon
                 icon={faFacebookF}
-                color="#3C5997"
+                className="social-icon facebook"
                 fontSize={17}
               />
             </a>
             <a href="https://x.com/Gazzettino" className="me-3">
               <FontAwesomeIcon
                 icon={faXTwitter}
-                color="#505050"
+                className="social-icon twitter"
                 fontSize={17}
               />
             </a>
