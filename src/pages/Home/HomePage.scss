@@ -9,10 +9,12 @@
     background-color: #eeeeee;
   }
 
-  .section-title {
-    font-size: 0.9rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: var(--primary);
+  .main-section {
+    flex: 5;
+  }
+
+  aside {
+    border-left: rgb(222, 222, 222) 1px solid;
+    flex: 2;
   }
 }

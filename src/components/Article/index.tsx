@@ -2,7 +2,6 @@ import { faFacebookF, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faReply } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Article.scss";
-import { noAuto } from "@fortawesome/fontawesome-svg-core";
 import { useMemo } from "react";
 
 export interface Article {
@@ -12,13 +11,14 @@ export interface Article {
   others: string[];
   author: string;
   aside?: boolean;
+  small?: boolean;
 }
 
 export const ArticleComponent: React.FC<{
   article: Article;
   noBorderBottom?: boolean;
 }> = ({ article, noBorderBottom }) => {
-  const { category, imgs, title, others, author, aside } = article;
+  const { category, imgs, small, title, others, author, aside } = article;
 
   const facebookRepliesCount = useMemo(() => {
     const repliesCount = Math.floor(Math.random() * 100);
@@ -47,11 +47,13 @@ export const ArticleComponent: React.FC<{
     return (
       <footer>
         <div className="d-flex">
-          <p>
-            <small>
-              <em>di {author}</em>
-            </small>
-          </p>
+          {author && (
+            <p>
+              <small>
+                <em>di {author}</em>
+              </small>
+            </p>
+          )}
           <div className="flex-grow-1 d-flex justify-content-end">
             <a
               href="https://www.facebook.com/gazzettino.it"
@@ -142,7 +144,7 @@ export const ArticleComponent: React.FC<{
       style={{
         borderBottom: noBorderBottom ? "none" : "rgb(222, 222, 222) 1px solid",
       }}
-      className="main-article"
+      className={"main-article " + small ? " small" : ""}
     >
       {renderContent()}
     </article>
