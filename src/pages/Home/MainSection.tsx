@@ -110,6 +110,7 @@ const ASIDE_NEWS = [
       title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       others: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit."],
       author: "Redazione Web",
+      size: "medium",
     },
   },
   {
@@ -124,6 +125,7 @@ const ASIDE_NEWS = [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       ],
       author: "Mario Rossi",
+      size: "medium",
     },
   },
   {
@@ -137,6 +139,7 @@ const ASIDE_NEWS = [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
       ],
       author: "Giovanni Bianchi",
+      size: "medium",
     },
   },
 ];
@@ -165,7 +168,7 @@ export const HomePageMainSection = () => {
 
       <aside className="ps-4">
         <CategoryTitle title="Il Video del Giorno" black />
-        <div className="mt-3">
+        <div className="mt-3 mb-4">
           <ArticleComponent
             article={{
               imgs: [
@@ -175,6 +178,7 @@ export const HomePageMainSection = () => {
               others: [],
               category: "",
               author: "",
+              size: "medium",
             }}
           />
         </div>

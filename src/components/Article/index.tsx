@@ -3,6 +3,7 @@ import { faReply } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Article.scss";
 import { useMemo } from "react";
+import classnames from "classnames";
 
 export interface Article {
   category: string;
@@ -11,14 +12,14 @@ export interface Article {
   others: string[];
   author: string;
   aside?: boolean;
-  small?: boolean;
+  size?: "big" | "small" | "medium";
 }
 
 export const ArticleComponent: React.FC<{
   article: Article;
   noBorderBottom?: boolean;
 }> = ({ article, noBorderBottom }) => {
-  const { category, imgs, small, title, others, author, aside } = article;
+  const { category, imgs, size, title, others, author, aside } = article;
 
   const facebookRepliesCount = useMemo(() => {
     const repliesCount = Math.floor(Math.random() * 100);
@@ -48,7 +49,7 @@ export const ArticleComponent: React.FC<{
       <footer>
         <div className="d-flex">
           {author && (
-            <p>
+            <p className="author">
               <small>
                 <em>di {author}</em>
               </small>
@@ -111,7 +112,7 @@ export const ArticleComponent: React.FC<{
   const renderContent = () => {
     if (aside)
       return (
-        <>
+        <article className="main-article">
           <header>
             <p className="section-title mb-1">{category}</p>
           </header>
@@ -123,11 +124,11 @@ export const ArticleComponent: React.FC<{
               {renderFooter()}
             </div>
           </div>
-        </>
+        </article>
       );
     else
       return (
-        <article className="main-article">
+        <article className={classnames("main-article", size)}>
           <header>
             <p className="section-title mb-1">{category}</p>
             {renderImage()}
@@ -139,14 +140,5 @@ export const ArticleComponent: React.FC<{
       );
   };
 
-  return (
-    <article
-      style={{
-        borderBottom: noBorderBottom ? "none" : "rgb(222, 222, 222) 1px solid",
-      }}
-      className={"main-article " + small ? " small" : ""}
-    >
-      {renderContent()}
-    </article>
-  );
+  return renderContent();
 };
