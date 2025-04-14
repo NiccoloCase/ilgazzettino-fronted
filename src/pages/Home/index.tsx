@@ -4,6 +4,7 @@ import GazzettinoNavbar from "../../components/Navbar";
 
 import "./HomePage.scss";
 import { PromoBanner } from "../../components/PromoBanner";
+import { HotNews } from "../../components/HotNews";
 
 export const HomePage: React.FC = () => {
   const topics = [
@@ -124,7 +125,11 @@ export const HomePage: React.FC = () => {
       </div>
 
       {/* ADV */}
-      <div className="bg-secondary text-white text-center py-4">adv</div>
+      <div className="adv text-secondary text-center py-4 mt-3">
+        <small>adv</small>
+      </div>
+
+      <HotNews />
 
       {/* News Grid */}
       <div className="container my-4">
