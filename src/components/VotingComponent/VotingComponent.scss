@@ -22,6 +22,10 @@
   .vote-btn {
     background-color: rgb(222, 222, 222);
     color: var(--primary);
+    &:active {
+      background-color: rgb(10, 80, 118);
+      color: #fff;
+    }
   }
   .results-btn {
     background-color: #ededed !important;
