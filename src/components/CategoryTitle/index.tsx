@@ -7,6 +7,7 @@ type CategoryTitleProps = {
 };
 
 export const CategoryTitle = ({ title, black }: CategoryTitleProps) => {
+  if (!title) return null;
   return (
     <div style={{ display: "inline-block" }} className="w-100">
       <h3

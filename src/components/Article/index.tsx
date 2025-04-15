@@ -113,7 +113,14 @@ export const ArticleComponent: React.FC<{
   const renderContent = () => {
     if (aside)
       return (
-        <article className="main-article">
+        <article
+          className="main-article"
+          style={{
+            borderBottom: noBorderBottom
+              ? "none"
+              : "rgb(222, 222, 222) 1px solid",
+          }}
+        >
           <header>
             <p className="section-title mb-1">{category}</p>
           </header>
@@ -129,7 +136,14 @@ export const ArticleComponent: React.FC<{
       );
     else
       return (
-        <article className={classnames("main-article", size)}>
+        <article
+          className={classnames("main-article", size)}
+          style={{
+            borderBottom: noBorderBottom
+              ? "none"
+              : "rgb(222, 222, 222) 1px solid",
+          }}
+        >
           <header>
             <p className="section-title mb-1">{category}</p>
             {renderImage()}

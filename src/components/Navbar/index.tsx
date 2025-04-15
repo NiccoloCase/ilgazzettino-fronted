@@ -39,29 +39,19 @@ const GazzettinoNavbar: React.FC = () => {
     );
   }, []);
 
-  // Measure header height after initial render
   useEffect(() => {
     if (headerRef.current) {
       setHeaderHeight(headerRef.current.clientHeight);
     }
   }, []);
 
-  // Scroll-based header visibility logic
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Always show header when scrolling to top
-      if (currentScrollY <= 0) {
-        setIsHeaderHidden(false);
-        setLastScrollY(currentScrollY);
-        return;
-      }
-
-      // Hide header when scrolling down past header height, show when scrolling up
-      if (currentScrollY > lastScrollY && currentScrollY > headerHeight) {
+      if (currentScrollY > headerHeight) {
         setIsHeaderHidden(true);
-      } else if (currentScrollY < lastScrollY) {
+      } else {
         setIsHeaderHidden(false);
       }
 

@@ -68,32 +68,29 @@ export const MAIN_NEWS = [
           category: "PADOVA",
           imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          others: [
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
-          ],
+          others: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. "],
           author: "Giovanni Bianchi",
           aside: false,
+          size: "small",
         },
         {
           category: "POLITICA",
           imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          others: [
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
-          ],
+          others: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit."],
           author: "Giovanni Bianchi",
           aside: false,
+          size: "small",
         },
 
         {
           category: "IL LUTTO",
           imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          others: [
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
-          ],
+          others: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit."],
           author: "Giovanni Bianchi",
           aside: false,
+          size: "small",
         },
       ],
     },
@@ -272,7 +269,7 @@ export const HomePageMainSection = () => {
         </aside>
       </main>
 
-      <div>{CATEGORIES_GRID.map(renderGridItem)}</div>
+      <section>{CATEGORIES_GRID.map(renderGridItem)}</section>
     </>
   );
 };
