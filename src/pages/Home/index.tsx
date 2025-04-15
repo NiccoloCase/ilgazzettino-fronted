@@ -76,7 +76,7 @@ export const HomePage: React.FC = () => {
       <nav className="nav justify-content-center border-bottom py-2">
         {sections.map((s, i) => (
           <a href="#" key={i} className="nav-link px-2 text-dark">
-            {s}
+            <small>{s}</small>
           </a>
         ))}
       </nav>

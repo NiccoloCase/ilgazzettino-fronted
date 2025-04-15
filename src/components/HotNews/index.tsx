@@ -5,7 +5,7 @@ export const HotNews = () => {
     {
       id: 1,
       text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi, atque!",
-      img: "https://placehold.co/150x100",
+      img: "https://placehold.co/310x170",
       alt: "Description of image for news item 1",
       author: "Marco Rossi",
       hasBadge: true,
@@ -13,7 +13,7 @@ export const HotNews = () => {
     {
       id: 2,
       text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi, atque!",
-      img: "https://placehold.co/150x100",
+      img: "https://placehold.co/310x170",
       alt: "Description of image for news item 2",
       author: "Nicola Tesla",
       hasBadge: true,
@@ -21,7 +21,7 @@ export const HotNews = () => {
     {
       id: 3,
       text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi, atque!",
-      img: "https://placehold.co/150x100",
+      img: "https://placehold.co/310x170",
       alt: "Description of image for news item 3",
       author: "Caterina Bianchi",
       hasBadge: false,
@@ -29,7 +29,7 @@ export const HotNews = () => {
     {
       id: 4,
       text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi, atque!",
-      img: "https://placehold.co/150x100",
+      img: "https://placehold.co/310x170",
       alt: "Description of image for news item 4",
       author: "Giuseppe Verdi",
       hasBadge: false,
