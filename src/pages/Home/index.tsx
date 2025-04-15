@@ -60,13 +60,9 @@ export const HomePage: React.FC = () => {
 
       {/* Topics */}
       <div className="text-center small  border-top border-bottom py-0 mt-1">
-        <span style={{ color: "#000" }}>Temi caldi:</span>
+        <span style={{ color: "#000", marginRight: "1rem" }}>Temi caldi:</span>
         {topics.map((t, i) => (
-          <a
-            href="#"
-            key={i}
-            className="mx-1 text-decoration-none text-primary link"
-          >
+          <a href="#" key={i} className="mx-1 text-decoration-none link">
             {t}
           </a>
         ))}
@@ -141,9 +137,6 @@ export const HomePage: React.FC = () => {
       </div> */}
 
       <HomePageMainSection />
-
-      {/* <h1>ciao</h1>
-      <div>{CATEGORIES_GRID.map(renderGridItem)}</div> */}
 
       {/* 
       

@@ -9,17 +9,16 @@ import { palette } from "../../config";
 import "./Navbar.scss";
 import NotificationBell from "../NotificationBell";
 import { SearchBar } from "../SearchBar";
+import { useStore } from "../../store";
 
 const GazzettinoNavbar: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [headerHeight, setHeaderHeight] = useState(0);
   const headerRef = useRef<HTMLElement | null>(null);
 
-  const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
-  };
+  const isDrawerOpen = useStore((s) => s.isDrawerOpen);
+  const setIsDrawerOpen = useStore((s) => s.setIsDrawerOpen);
 
   const updateTimeText = useMemo(() => {
     const date = new Date().toLocaleDateString("it-IT", {
@@ -77,15 +76,15 @@ const GazzettinoNavbar: React.FC = () => {
         <Container fluid>
           <div className="d-flex justify-content-between align-items-center position-relative">
             <div className="d-flex align-items-center z-1">
-              <Hamburger
-                toggled={menuOpen}
-                toggle={setMenuOpen}
-                size={20}
-                label="Menu"
-              />
-              <span className="fw-bold d-none d-md-inline ">
-                <small>MENU</small>
-              </span>
+              <button
+                className="d-flex align-items-center border-0 bg-white"
+                onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+              >
+                <Hamburger toggled={isDrawerOpen} size={20} label="Menu" />
+                <span className="fw-bold d-none d-md-inline ">
+                  <small>MENU</small>
+                </span>
+              </button>
               <FontAwesomeIcon icon={faSearch} className="ms-4" fontSize={17} />
               <SearchBar />
             </div>
@@ -146,13 +145,6 @@ const GazzettinoNavbar: React.FC = () => {
           </div>
         </Container>
       </header>
-
-      {/* Mobile Dropdown Menu */}
-      {menuOpen && (
-        <section className="bg-primary text-white px-3 py-3 d-md-none">
-          {/* ... */}
-        </section>
-      )}
     </>
   );
 };
