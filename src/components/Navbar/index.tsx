@@ -73,11 +73,11 @@ const GazzettinoNavbar: React.FC = () => {
         }
         style={{ fontSize: "14px" }}
       >
-        <Container fluid>
+        <Container fluid className="p-0">
           <div className="d-flex justify-content-between align-items-center position-relative">
             <div className="d-flex align-items-center z-1">
               <button
-                className="d-flex align-items-center border-0 bg-white"
+                className="d-flex align-items-center border-0 p-0 m-0 bg-transparent"
                 onClick={() => setIsDrawerOpen(!isDrawerOpen)}
               >
                 <Hamburger toggled={isDrawerOpen} size={20} label="Menu" />
