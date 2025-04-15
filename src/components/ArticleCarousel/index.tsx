@@ -1,4 +1,5 @@
 import { Article, ArticleComponent } from "../Article";
+import { CategoryTitle } from "../CategoryTitle";
 
 export type ArticleCarousel = {
   articles: Article[];
@@ -15,9 +16,9 @@ export const ArticleCarousel: React.FC<{
         borderBottom: "rgb(222, 222, 222) 1px solid",
       }}
     >
-      <h2 className="mb-3">{data.title}</h2>
+      <CategoryTitle title={data.title} />
 
-      <div className="row g-3 ">
+      <div className={"row g-3 " + (data.title ? "mt-2" : "")}>
         {data.articles.map((article, index) => (
           <div className="col" key={index}>
             <ArticleComponent article={article} noBorderBottom />

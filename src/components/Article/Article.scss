@@ -14,6 +14,19 @@
     }
   }
 
+  &.small {
+    .news-title {
+      font-size: 0.9rem;
+    }
+    .other-news {
+      font-size: 0.8rem;
+    }
+
+    .author {
+      font-size: 0.8rem;
+    }
+  }
+
   &:hover {
     .social-icon.facebook {
       color: #3c5997;
@@ -62,12 +75,6 @@
       &:hover {
         text-decoration: underline;
       }
-    }
-  }
-
-  &.medium {
-    .news-title {
-      font-size: 1rem;
     }
   }
 }

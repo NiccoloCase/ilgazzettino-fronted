@@ -8,7 +8,7 @@ type CategoryTitleProps = {
 
 export const CategoryTitle = ({ title, black }: CategoryTitleProps) => {
   return (
-    <div style={{ display: "inline-block" }}>
+    <div style={{ display: "inline-block" }} className="w-100">
       <h3
         style={{
           color: black ? "#000" : "#055C85",
@@ -16,6 +16,7 @@ export const CategoryTitle = ({ title, black }: CategoryTitleProps) => {
           fontSize: "22px",
           textTransform: "uppercase",
           marginBottom: "4px",
+          width: "100%",
         }}
       >
         {title}

@@ -144,6 +144,81 @@ const ASIDE_NEWS = [
   },
 ];
 
+const CATEGORIES_ARTICLES = [
+  {
+    category: "",
+    imgs: [{ src: "https://placehold.co/227x124", alt: "lorem ipsum" }],
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    author: "Giovanni Bianchi",
+    size: "small",
+  },
+  {
+    category: "",
+    imgs: [{ src: "https://placehold.co/227x124", alt: "lorem ipsum" }],
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    author: "Giovanni Bianchi",
+    size: "small",
+  },
+
+  {
+    category: "",
+    imgs: [{ src: "https://placehold.co/227x124", alt: "lorem ipsum" }],
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    author: "Giovanni Bianchi",
+    size: "small",
+  },
+  {
+    category: "",
+    imgs: [{ src: "https://placehold.co/227x124", alt: "lorem ipsum" }],
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    author: "Giovanni Bianchi",
+    size: "small",
+  },
+] as Article[];
+
+const CATEGORIES_GRID = [
+  {
+    id: 1,
+    type: "article-carousel",
+    data: {
+      title: "MOTORI",
+      articles: CATEGORIES_ARTICLES,
+    },
+  },
+  {
+    id: 2,
+    type: "article-carousel",
+    data: {
+      title: "VIAGGI",
+      articles: CATEGORIES_ARTICLES,
+    },
+  },
+  {
+    id: 3,
+    type: "article-carousel",
+    data: {
+      title: "SALUTE",
+      articles: CATEGORIES_ARTICLES,
+    },
+  },
+  {
+    id: 4,
+    type: "article-carousel",
+    data: {
+      title: "MODA",
+      articles: CATEGORIES_ARTICLES,
+    },
+  },
+  {
+    id: 4,
+    type: "article-carousel",
+    data: {
+      title: "ANIMALI",
+      articles: CATEGORIES_ARTICLES,
+    },
+  },
+] as GridItem[];
+
 export const HomePageMainSection = () => {
   const renderGridItem = (item: GridItem) => {
     switch (item.type) {
@@ -161,40 +236,43 @@ export const HomePageMainSection = () => {
   };
 
   return (
-    <main className="container my-4 d-flex">
-      <section className="main-section  pe-4">
-        {MAIN_NEWS.map(renderGridItem)}
-      </section>
+    <>
+      <main className="container my-4 d-flex">
+        <section className="main-section  pe-4">
+          {MAIN_NEWS.map(renderGridItem)}
+        </section>
 
-      <aside className="ps-4">
-        <CategoryTitle title="Il Video del Giorno" black />
-        <div className="mt-3 mb-4">
-          <ArticleComponent
-            article={{
-              imgs: [
-                { src: "https://placehold.co/200x120", alt: "lorem ipsum" },
-              ],
-              title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-              others: [],
-              category: "",
-              author: "",
-              size: "medium",
-            }}
-          />
-        </div>
+        <aside className="ps-4">
+          <CategoryTitle title="Il Video del Giorno" black />
+          <div className="mt-3 mb-4">
+            <ArticleComponent
+              article={{
+                imgs: [
+                  { src: "https://placehold.co/200x120", alt: "lorem ipsum" },
+                ],
+                title:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                others: [],
+                category: "",
+                author: "",
+                size: "medium",
+              }}
+            />
+          </div>
 
-        <CategoryTitle title="ITALIA&MONDO" />
+          <CategoryTitle title="ITALIA&MONDO" />
 
-        <div className="mt-3">
-          {ASIDE_NEWS.map((item) => (
-            <div key={item.id} className="mb-4">
-              <ArticleComponent
-                article={item.data as Article}
-              ></ArticleComponent>
-            </div>
-          ))}
-        </div>
-      </aside>
-    </main>
+          <div className="mt-3">
+            {ASIDE_NEWS.map((item) => (
+              <div key={item.id} className="mb-4">
+                <ArticleComponent article={item.data as Article} />
+              </div>
+            ))}
+          </div>
+        </aside>
+      </main>
+
+      <div>{CATEGORIES_GRID.map(renderGridItem)}</div>
+    </>
   );
 };

@@ -90,6 +90,7 @@ export const ArticleComponent: React.FC<{
   };
 
   const renderOtherNews = () => {
+    if (!others || others.length === 0) return null;
     return (
       <p className="text-muted mt-2 other-news">
         {others.map((other, index) => (

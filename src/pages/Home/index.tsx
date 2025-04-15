@@ -45,33 +45,6 @@ export const HomePage: React.FC = () => {
     "NORDEST",
   ];
 
-  const news = [
-    {
-      title:
-        "Neonato seviziato dal papà 22enne, il piccolo è guarito: è sopravvissuto al genitore che gli metteva le dita in gola per avere i sussidi per la disabilità",
-      img: "https://via.placeholder.com/300x200?text=Neonato",
-      author: "Nicola Munaro",
-    },
-    {
-      title:
-        "«Non voglio affittare a un marocchino». Assessore neopapà discriminato mentre cerca una casa più grande dove vivere con le sue gemelline VIDEO",
-      img: "https://via.placeholder.com/300x200?text=Assessore",
-      author: "Redazione Treviso",
-      video: true,
-    },
-    {
-      title:
-        "Bambino di 3 anni fugge dall’asilo e vaga per le strade da solo, scatta l'allarme ai carabinieri dalla scuola: il piccolo ritrovato in lacrime",
-      img: "https://via.placeholder.com/300x200?text=Bambino",
-      author: "Mauro Favaro",
-    },
-    {
-      title:
-        "Restaurano un palazzo di fronte al ponte di Rialto e sotto l'intonaco appare un affresco del sedicesimo secolo",
-      img: "https://via.placeholder.com/300x200?text=Rialto",
-    },
-  ];
-
   return (
     <div className="HomePage container-fluid ">
       {/* Logo */}
@@ -168,6 +141,10 @@ export const HomePage: React.FC = () => {
       </div> */}
 
       <HomePageMainSection />
+
+      {/* <h1>ciao</h1>
+      <div>{CATEGORIES_GRID.map(renderGridItem)}</div> */}
+
       {/* 
       
       TODO: active before prod
