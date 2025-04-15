@@ -1,6 +1,7 @@
 import { Article, ArticleComponent } from "../../components/Article";
 import { ArticleCarousel } from "../../components/ArticleCarousel";
 import { CategoryTitle } from "../../components/CategoryTitle";
+import VotingComponent from "../../components/VotingComponent";
 
 export interface GridItem {
   type: "article" | "article-carousel";
@@ -422,6 +423,7 @@ const ASIDE_NEWS = [
     data: {
       title: "LE PIU' CONDIVISE",
       vertical: true,
+      noMargin: true,
       articles: [
         {
           category: "",
@@ -429,6 +431,9 @@ const ASIDE_NEWS = [
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           size: "small",
           aside: true,
+          smallImage: true,
+          hideButtons: true,
+          author: "Marco Antonio",
         },
         {
           category: "",
@@ -436,6 +441,9 @@ const ASIDE_NEWS = [
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           size: "small",
           aside: true,
+          smallImage: true,
+          hideButtons: true,
+          author: "Marco Antonio",
         },
         {
           category: "",
@@ -443,6 +451,9 @@ const ASIDE_NEWS = [
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           size: "small",
           aside: true,
+          smallImage: true,
+          hideButtons: true,
+          author: "Marco Antonio",
         },
       ],
     },
@@ -568,6 +579,11 @@ export const HomePageMainSection = () => {
           <CategoryTitle title="ITALIA&MONDO" />
 
           <div className="mt-3">{ASIDE_NEWS.map(renderGridItem)}</div>
+
+          <div>
+            <CategoryTitle title="SONDAGGGI" black />
+            <VotingComponent />
+          </div>
         </aside>
       </main>
 
