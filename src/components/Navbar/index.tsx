@@ -135,10 +135,13 @@ const GazzettinoNavbar: React.FC = () => {
                   />
                 </a>
               </div>
-              <span className="me-3">
+              <span className="me-3 nav-btn">
                 <small>ACCEDI</small>
               </span>
-              <span style={{ color: palette.primary }} className="fw-bold">
+              <span
+                style={{ color: palette.primary }}
+                className="fw-bold nav-btn"
+              >
                 <small>PROMO FLASH</small>
               </span>
             </div>
