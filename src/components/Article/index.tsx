@@ -114,7 +114,7 @@ export const ArticleComponent: React.FC<{
     if (aside)
       return (
         <article
-          className="main-article"
+          className={classnames("main-article", size)}
           style={{
             borderBottom: noBorderBottom
               ? "none"
