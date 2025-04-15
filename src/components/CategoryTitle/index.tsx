@@ -21,7 +21,7 @@ export const CategoryTitle = ({ title, black, logo }: CategoryTitleProps) => {
           width: "100%",
         }}
       >
-        {logo ? <img src={logo} alt="logo" height={20} /> : title}
+        {!!logo ? <img src={logo} alt="logo" height={20} /> : title}
       </h3>
       <div
         style={{

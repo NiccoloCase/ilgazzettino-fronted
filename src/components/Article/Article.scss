@@ -1,6 +1,12 @@
 .main-article {
   margin-bottom: 2rem;
 
+  &.nomargin {
+    margin: 0 !important;
+    margin-bottom: 0 !important;
+    margin-top: 5px !important;
+  }
+
   &.medium {
     .news-title {
       font-size: 1.3rem;

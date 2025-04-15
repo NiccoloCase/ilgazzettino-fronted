@@ -303,65 +303,151 @@ const ASIDE_NEWS = [
     },
   },
   {
-    id: 8,
-    type: "article",
+    id: 11,
+    type: "article-carousel",
     data: {
-      category: "",
-      imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
-      title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      others: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+      logo: "/assets/moltofood.svg",
+      vertical: true,
+      noMargin: true,
+      articles: [
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/100x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+          aside: true,
+          smallImage: true,
+          hideButtons: true,
+        },
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/100x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+          aside: true,
+          smallImage: true,
+          hideButtons: true,
+        },
       ],
-      author: "Giovanni Bianchi",
-      size: "medium",
     },
   },
   {
-    id: 9,
-    type: "article",
+    id: 11,
+    type: "article-carousel",
     data: {
-      category: "",
-      imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
-      title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      others: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+      title: "BLOG",
+      background: "#ededed",
+      vertical: true,
+      noMargin: true,
+      articles: [
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/100x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+          aside: true,
+          smallImage: true,
+          hideButtons: true,
+          author: "Niccolò Rossi",
+        },
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/100x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+          aside: true,
+          smallImage: true,
+          hideButtons: true,
+          author: "Niccolò Rossi",
+        },
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/100x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+          aside: true,
+          smallImage: true,
+          hideButtons: true,
+          author: "Niccolò Rossi",
+        },
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/100x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+          aside: true,
+          smallImage: true,
+          hideButtons: true,
+          author: "Niccolò Rossi",
+        },
       ],
-      author: "Giovanni Bianchi",
-      size: "medium",
     },
   },
   {
-    id: 10,
-    type: "article",
+    id: 12,
+    type: "article-carousel",
     data: {
-      category: "",
-      imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
-      title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      others: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+      title: "IN VISITA",
+      vertical: true,
+      articles: [
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+        },
       ],
-      author: "Giovanni Bianchi",
-      size: "medium",
     },
   },
-];
+  {
+    id: 13,
+    type: "article-carousel",
+    data: {
+      title: "VENICE VISIT PASS",
+      vertical: true,
+      articles: [
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+        },
+      ],
+    },
+  },
 
-const ASIDE_FOOD = [
   {
-    category: "",
-    imgs: [{ src: "https://placehold.co/100x100", alt: "lorem ipsum" }],
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    size: "small",
-    aside: true,
+    id: 14,
+    type: "article-carousel",
+    data: {
+      title: "LE PIU' CONDIVISE",
+      vertical: true,
+      articles: [
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/100x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+          aside: true,
+        },
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/100x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+          aside: true,
+        },
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/100x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+          aside: true,
+        },
+      ],
+    },
   },
-  {
-    category: "",
-    imgs: [{ src: "https://placehold.co/100x100", alt: "lorem ipsum" }],
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    size: "small",
-    aside: true,
-  },
-];
+] as GridItem[];
 
 const CATEGORIES_ARTICLES = [
   {
@@ -481,22 +567,7 @@ export const HomePageMainSection = () => {
 
           <CategoryTitle title="ITALIA&MONDO" />
 
-          <div className="mt-3">
-            {ASIDE_NEWS.map((item) => (
-              <div key={item.id} className="mb-4">
-                <ArticleComponent article={item.data as Article} />
-              </div>
-            ))}
-          </div>
-
-          <CategoryTitle logo="assets/moltofood.svg" />
-          <div className="mt-3">
-            {ASIDE_FOOD.map((item, key) => (
-              <div key={"FOOD" + key} className="mb-4">
-                <ArticleComponent article={item as Article} />
-              </div>
-            ))}
-          </div>
+          <div className="mt-3">{ASIDE_NEWS.map(renderGridItem)}</div>
         </aside>
       </main>
 
