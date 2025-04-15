@@ -1,0 +1,41 @@
+.my-search-bar {
+  position: relative;
+  display: inline-block;
+
+  input {
+    border: none;
+    outline: none;
+    font-size: 0.9em;
+    position: relative;
+    background: transparent;
+    z-index: 1;
+
+    &::placeholder {
+      color: rgb(94, 94, 94);
+    }
+
+    &:focus + .underline::after {
+      transform: scaleX(1);
+    }
+  }
+
+  .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 130%;
+    height: 1px;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: rgb(94, 94, 94);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}

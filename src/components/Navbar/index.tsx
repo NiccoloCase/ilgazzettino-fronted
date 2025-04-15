@@ -8,6 +8,7 @@ import { palette } from "../../config";
 
 import "./Navbar.scss";
 import NotificationBell from "../NotificationBell";
+import { SearchBar } from "../SearchBar";
 
 const GazzettinoNavbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -75,7 +76,6 @@ const GazzettinoNavbar: React.FC = () => {
       >
         <Container fluid>
           <div className="d-flex justify-content-between align-items-center position-relative">
-            {/* Left column */}
             <div className="d-flex align-items-center z-1">
               <Hamburger
                 toggled={menuOpen}
@@ -83,12 +83,13 @@ const GazzettinoNavbar: React.FC = () => {
                 size={20}
                 label="Menu"
               />
-              <span className="fw-bold d-none d-md-inline ms-2">MENU</span>
+              <span className="fw-bold d-none d-md-inline ">
+                <small>MENU</small>
+              </span>
               <FontAwesomeIcon icon={faSearch} className="ms-4" fontSize={17} />
-              <span className="ms-1 text-secondary">CERCA</span>
+              <SearchBar />
             </div>
 
-            {/* Center text */}
             <div className="position-absolute start-50 translate-middle-x">
               {!isHeaderHidden ? (
                 <div
@@ -114,7 +115,6 @@ const GazzettinoNavbar: React.FC = () => {
               )}
             </div>
 
-            {/* Right column */}
             <div className="d-flex align-items-center z-1">
               <NotificationBell />
               <div className="d-flex ps-4">
