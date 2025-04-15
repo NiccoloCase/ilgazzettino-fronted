@@ -2,12 +2,13 @@ import React from "react";
 import { palette } from "../../config";
 
 type CategoryTitleProps = {
-  title: string;
+  title?: string;
   black?: boolean;
+  logo?: string;
 };
 
-export const CategoryTitle = ({ title, black }: CategoryTitleProps) => {
-  if (!title) return null;
+export const CategoryTitle = ({ title, black, logo }: CategoryTitleProps) => {
+  if (!title && !logo) return null;
   return (
     <div style={{ display: "inline-block" }} className="w-100">
       <h3
@@ -20,7 +21,7 @@ export const CategoryTitle = ({ title, black }: CategoryTitleProps) => {
           width: "100%",
         }}
       >
-        {title}
+        {logo ? <img src={logo} alt="logo" height={20} /> : title}
       </h3>
       <div
         style={{

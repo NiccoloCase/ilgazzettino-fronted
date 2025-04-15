@@ -95,6 +95,113 @@ export const MAIN_NEWS = [
       ],
     },
   },
+
+  {
+    id: 5,
+    type: "article-carousel",
+    data: {
+      title: "",
+      logo: "assets/moltofood.svg",
+      articles: [
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+        },
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+        },
+
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+        },
+      ],
+    },
+  },
+
+  {
+    id: 6,
+    type: "article-carousel",
+    data: {
+      title: "",
+      logo: "assets/moltosalute.svg",
+      articles: [
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+        },
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+        },
+
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+        },
+      ],
+    },
+  },
+  {
+    id: 7,
+    type: "article-carousel",
+    data: {
+      title: "VIDEO",
+      articles: [
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+        },
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+        },
+
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+        },
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+        },
+      ],
+    },
+  },
+
+  {
+    id: 8,
+    type: "article",
+    data: {
+      category: "Cultura, Spettacoli e Tv".toUpperCase(),
+      imgs: [{ src: "https://placehold.co/227x125", alt: "lorem ipsum" }],
+      title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+
+      author: "Mario Bianchi",
+      aside: true,
+    },
+  },
 ] as GridItem[];
 
 const ASIDE_NEWS = [
