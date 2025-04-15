@@ -1,0 +1,47 @@
+.notification-bell {
+  position: relative;
+  width: 30px;
+  height: 30px;
+
+  .bell-icon {
+    font-size: 25px;
+    color: #991b1b;
+    animation: shake 5s infinite;
+    transform-origin: top center;
+  }
+
+  .badge {
+    position: absolute;
+    top: -8px;
+    right: 0px;
+    background-color: #991b1b;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-weight: bold;
+    border: 1px solid white;
+    aspect-ratio: 1;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  1% {
+    transform: rotate(-15deg);
+  }
+  3% {
+    transform: rotate(15deg);
+  }
+  5% {
+    transform: rotate(-10deg);
+  }
+  7% {
+    transform: rotate(10deg);
+  }
+  9% {
+    transform: rotate(0deg);
+  }
+}

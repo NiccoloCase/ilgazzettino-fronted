@@ -7,6 +7,7 @@ import { faFacebookF, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { palette } from "../../config";
 
 import "./Navbar.scss";
+import NotificationBell from "../NotificationBell";
 
 const GazzettinoNavbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -115,8 +116,8 @@ const GazzettinoNavbar: React.FC = () => {
 
             {/* Right column */}
             <div className="d-flex align-items-center z-1">
-              <FontAwesomeIcon icon={faBell} fontSize={25} color="#CCCCCC" />
-              <div className="d-flex ps-5">
+              <NotificationBell />
+              <div className="d-flex ps-4">
                 <a
                   href="https://www.facebook.com/gazzettino.it"
                   className="me-3"
