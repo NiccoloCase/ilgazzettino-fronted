@@ -47,8 +47,7 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="HomePage container-fluid ">
-      {/* Logo */}
-      <div className="text-center my-3">
+      <div className="text-center my-3 d-none d-md-block">
         <img
           src="/assets/logo.png"
           alt="ilgazzettino"
@@ -58,8 +57,7 @@ export const HomePage: React.FC = () => {
         />
       </div>
 
-      {/* Topics */}
-      <div className="text-center small  border-top border-bottom py-0 mt-1">
+      <div className="text-center small  border-top border-bottom py-0 mt-1 d-none d-md-block">
         <span style={{ color: "#000", marginRight: "1rem" }}>Temi caldi:</span>
         {topics.map((t, i) => (
           <a href="#" key={i} className="mx-1 text-decoration-none link">
@@ -68,8 +66,7 @@ export const HomePage: React.FC = () => {
         ))}
       </div>
 
-      {/* Main Navbar */}
-      <nav className="nav justify-content-center border-bottom py-2">
+      <nav className="nav justify-content-center border-bottom py-2 d-none d-md-flex">
         {sections.map((s, i) => (
           <a href="#" key={i} className="nav-link px-2 text-dark">
             <small>{s}</small>
@@ -77,9 +74,8 @@ export const HomePage: React.FC = () => {
         ))}
       </nav>
 
-      {/* Region Tabs */}
       <div
-        className=" text-white text-center py-2"
+        className=" text-white text-center py-2 d-none d-md-block"
         style={{
           background: palette.primary,
         }}

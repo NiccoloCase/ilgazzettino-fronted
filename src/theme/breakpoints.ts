@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 export const BREAKPOINTS = {
   xs: 0, // X-Small: None <576px
   sm: 576, // Small: ≥576px
@@ -16,3 +18,23 @@ export const getBreakpoint = () => {
   }
   return "xl";
 };
+
+export type BreakpointKey = keyof typeof BREAKPOINTS;
+
+export function useDownBreakpoint(breakpointKey: BreakpointKey): boolean {
+  const [isBelow, setIsBelow] = useState<boolean>(() => {
+    if (typeof window === "undefined") return false;
+    return window.innerWidth < BREAKPOINTS[breakpointKey];
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsBelow(window.innerWidth < BREAKPOINTS[breakpointKey]);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [breakpointKey]);
+
+  return isBelow;
+}

@@ -1,9 +1,14 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
 .Navbar {
   padding: 0 var(--padding-x);
-
   transition: all 0.3s ease-in-out;
   top: 0;
   z-index: 1000;
+
+  .user-btn {
+    display: none;
+  }
 
   &.position-relative {
     position: relative;
@@ -22,4 +27,31 @@
       text-decoration: underline;
     }
   }
+
+  @include media-breakpoint-down(md) {
+    position: sticky !important;
+
+    .desktop-search-bar,
+    .social-btn,
+    .promo-btn,
+    .login-btn {
+      display: none !important;
+    }
+
+    .user-btn {
+      display: block !important;
+    }
+  }
+}
+
+.update-time-text {
+  pointer-events: none;
+  font-weight: 400;
+  font-size: 13px;
+  color: rgb(94, 94, 94);
+}
+
+.mobile-time-section {
+  padding: 1rem;
+  text-align: center;
 }
