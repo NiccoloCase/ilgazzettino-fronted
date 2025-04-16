@@ -143,6 +143,20 @@ export const ArticleComponent: React.FC<{
     );
   };
 
+  const renderCatgory = (desktop = true) => {
+    if (!category) return null;
+    return (
+      <p
+        className={classnames("section-title mb-1", {
+          [" d-none d-md-block "]: desktop,
+          [" d-block d-md-none "]: !desktop,
+        })}
+      >
+        {category}
+      </p>
+    );
+  };
+
   const renderContent = () => {
     if (aside && (!others || others.length < 2))
       return (
@@ -157,17 +171,14 @@ export const ArticleComponent: React.FC<{
               : "rgb(222, 222, 222) 1px solid",
           }}
         >
-          {category && (
-            <header>
-              <p className="section-title mb-1">{category}</p>
-            </header>
-          )}
+          <header>{renderCatgory()}</header>
           <div className="container-fluid">
             <div className="row">
               <div className={smallImage ? "col-md-4" : "col-md-6"}>
                 {renderImage()}
               </div>
               <div className={smallImage ? "col-md-8" : "col-md-6"}>
+                {renderCatgory(false)}
                 {renderTitle()}
                 {renderOtherNews()}
                 {renderFooter()}
@@ -190,17 +201,14 @@ export const ArticleComponent: React.FC<{
               : "rgb(222, 222, 222) 1px solid",
           }}
         >
-          {category && (
-            <header>
-              <p className="section-title mb-1">{category}</p>
-            </header>
-          )}
+          <header>{renderCatgory()}</header>
           <div className="container-fluid">
             <div className="row">
               <div className={smallImage ? "col-md-4" : "col-md-6"}>
                 {renderImage()}
               </div>
               <div className={smallImage ? "col-md-8" : "col-md-6"}>
+                {renderCatgory(false)}
                 {renderTitle()}
               </div>
             </div>
@@ -225,10 +233,12 @@ export const ArticleComponent: React.FC<{
           }}
         >
           <header>
-            {category && <p className="section-title mb-1">{category}</p>}
-            {renderImage()}
+            {renderCatgory()}
+            <div className="order-2 order-md-1">{renderImage()}</div>
+            {renderCatgory(false)}
             {renderTitle()}
           </header>
+
           {renderOtherNews()}
           {renderFooter()}
         </article>

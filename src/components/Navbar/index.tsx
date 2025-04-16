@@ -40,8 +40,11 @@ const Navbar: React.FC = () => {
     return isDrawerOpen || isMobileMenuOpen;
   }, [isDrawerOpen, isMobileMenuOpen]);
 
-  // Chiude drawer o mobile menu quando l'aspect ratio cambia per evitare bugs
   useEffect(() => {
+    // Per evitare bugs su mobile sull'ombra della navbar
+    if (isMobile && isHeaderHidden) setIsHeaderHidden(false);
+
+    // Chiude drawer o mobile menu quando l'aspect ratio cambia per evitare bugs
     if (!isMobile && isMobileMenuOpen) {
       setIsMobileMenuOpen(false);
     } else if (isMobile && isDrawerOpen) {
