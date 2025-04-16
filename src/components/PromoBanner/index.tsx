@@ -22,15 +22,8 @@ export const PromoBanner = () => {
   if (!isVisible) return null;
 
   return (
-    <aside
-      className="PromoBanner fixed-bottom"
-      aria-label="Special promotion"
-      style={{
-        background:
-          "linear-gradient(45deg, rgb(253, 204, 3) 0px, rgb(253, 204, 3) 100%)",
-      }}
-    >
-      <div className="promo-content d-flex justify-content-between align-items-center">
+    <aside className="PromoBanner fixed-bottom" aria-label="Special promotion">
+      <div className="promo-content d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center">
         <section aria-labelledby="promo-heading promo-subheading">
           <h2 id="promo-heading" className="h3">
             <strong>Promo 3 Mesi a 9€</strong>
@@ -40,9 +33,9 @@ export const PromoBanner = () => {
           </p>
         </section>
 
-        <div className="promo-actions d-flex flex-column justify-content-center align-items-end">
+        <div className="promo-actions d-flex flex-row flex-sm-column justify-content-start justify-content-sm-center align-items-start align-items-sm-end gap-2 mt-3 mt-sm-0">
           <button
-            className="close-button"
+            className="close-button order-2 order-sm-1"
             onClick={handleClose}
             aria-label="Close promotion banner"
           >
@@ -50,7 +43,7 @@ export const PromoBanner = () => {
           </button>
 
           <button
-            className="subscribe-button"
+            className="subscribe-button order-1 order-sm-2"
             onClick={subscribe}
             aria-label="Subscribe to newsletter"
           >

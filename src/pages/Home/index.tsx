@@ -5,43 +5,11 @@ import { PromoBanner } from "../../components/PromoBanner";
 import { HotNews } from "../../components/HotNews";
 import { HomePageMainSection } from "./MainSection";
 import { VideoAD } from "../../components/VideoAD";
+import { REGIONS, SECTIONS, TOPICS } from "./content";
+import { useDownBreakpoint } from "../../theme";
 
 export const HomePage: React.FC = () => {
-  const topics = [
-    "Liliana Resinovich",
-    "Luca Zaia",
-    "Filippo Turetta",
-    "Cristian Buonaiuto",
-    "Baby Gang",
-  ];
-  const sections = [
-    "Italia",
-    "Economia",
-    "Sport",
-    "Esteri",
-    "Tecnologia",
-    "Cultura e Spettacoli",
-    "Gossip",
-    "Animali",
-    "Blog",
-    "Viaggi",
-    "Salute",
-    "Motori",
-    "Europa",
-  ];
-  const regions = [
-    "VENEZIA – MESTRE",
-    "TREVISO",
-    "PADOVA",
-    "BELLUNO",
-    "ROVIGO",
-    "VICENZA – BASSANO",
-    "VERONA",
-    "PORDENONE",
-    "UDINE",
-    "TRIESTE",
-    "NORDEST",
-  ];
+  const isMobile = useDownBreakpoint("sm");
 
   return (
     <div className="HomePage container-fluid ">
@@ -57,7 +25,7 @@ export const HomePage: React.FC = () => {
 
       <div className="text-center small  border-top border-bottom py-0 mt-1 d-none d-md-block">
         <span style={{ color: "#000", marginRight: "1rem" }}>Temi caldi:</span>
-        {topics.map((t, i) => (
+        {TOPICS.map((t, i) => (
           <a href="#" key={i} className="mx-1 text-decoration-none link">
             {t}
           </a>
@@ -65,7 +33,7 @@ export const HomePage: React.FC = () => {
       </div>
 
       <nav className="nav justify-content-center border-bottom py-2 d-none d-md-flex">
-        {sections.map((s, i) => (
+        {SECTIONS.map((s, i) => (
           <a href="#" key={i} className="nav-link px-2 text-dark">
             <small>{s}</small>
           </a>
@@ -78,7 +46,7 @@ export const HomePage: React.FC = () => {
           background: palette.primary,
         }}
       >
-        {regions.map((r, i) => (
+        {REGIONS.map((r, i) => (
           <a
             href="#"
             key={i}
@@ -89,20 +57,21 @@ export const HomePage: React.FC = () => {
         ))}
       </div>
 
-      {/* ADV */}
       <div className="adv text-secondary text-center py-4 mt-3">
         <small>adv</small>
       </div>
 
       <HotNews />
-
       <HomePageMainSection />
 
       {/* 
       
       TODO: active before prod
-      <PromoBanner />
-      <VideoAD /> */}
+  
+       <PromoBanner />
+      {!isMobile && <VideoAD />}
+      
+      */}
     </div>
   );
 };

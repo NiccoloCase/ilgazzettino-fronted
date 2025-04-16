@@ -1,9 +1,20 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
 .PromoBanner {
   padding: 1rem var(--padding-x);
+  background: linear-gradient(
+    45deg,
+    rgb(253, 204, 3) 0px,
+    rgb(253, 204, 3) 100%
+  );
 
   .promo-content {
     max-width: 1440px;
     margin: 0 auto;
+
+    @include media-breakpoint-down(md) {
+      padding: 1rem;
+    }
   }
 
   .promo-actions {
