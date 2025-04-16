@@ -6,11 +6,20 @@ import { useStore } from "../store";
 
 export const Layout = () => {
   const isDrawerOpen = useStore((s) => s.isDrawerOpen);
+  const setIsDrawerOpen = useStore((s) => s.setIsDrawerOpen);
 
   return (
     <div className="drawer-wrapper">
       <Drawer />
-      <div className={`content ${isDrawerOpen ? "shifted" : ""}`}>
+      <div
+        className={`content ${isDrawerOpen ? "shifted" : ""}`}
+        onClick={(e) => {
+          if (isDrawerOpen) {
+            e.preventDefault();
+            setIsDrawerOpen(false);
+          }
+        }}
+      >
         <GazzettinoNavbar />
         <Outlet />
         <Footer />
