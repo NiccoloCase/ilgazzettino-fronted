@@ -1,7 +1,5 @@
 import React from "react";
 import { palette } from "../../config";
-import Navbar from "../../components/Navbar";
-
 import "./HomePage.scss";
 import { PromoBanner } from "../../components/PromoBanner";
 import { HotNews } from "../../components/HotNews";

@@ -1,3 +1,4 @@
+import { useDownBreakpoint } from "../../theme";
 import { Article, ArticleComponent } from "../Article";
 import { CategoryTitle } from "../CategoryTitle";
 
@@ -13,6 +14,10 @@ export type ArticleCarousel = {
 export const ArticleCarousel: React.FC<{
   data: ArticleCarousel;
 }> = ({ data }) => {
+  const md = useDownBreakpoint("md");
+
+  const vertical = md ? true : data.vertical;
+
   return (
     <div
       className={"article-carousel mb-4 "}
@@ -25,7 +30,7 @@ export const ArticleCarousel: React.FC<{
       <div
         className={
           "g-3 " +
-          (data.vertical ? "d-flex flex-column" : "row") +
+          (vertical ? "d-flex flex-column" : "row") +
           (data.title || data.logo ? " mt-2" : "")
         }
         style={
@@ -38,7 +43,7 @@ export const ArticleCarousel: React.FC<{
       >
         {data.articles.map((article, index) => (
           <div
-            className={data.vertical ? (data.noMargin ? "" : "mb-3") : "col"}
+            className={vertical ? (data.noMargin ? "" : "mb-3") : "col"}
             key={index}
           >
             <ArticleComponent
@@ -46,7 +51,7 @@ export const ArticleCarousel: React.FC<{
                 noMargin: data.noMargin,
                 ...article,
               }}
-              noBorderBottom={!data.vertical || data.articles.length < 2}
+              noBorderBottom={!vertical || data.articles.length < 2}
             />
           </div>
         ))}

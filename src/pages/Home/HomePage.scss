@@ -1,3 +1,5 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
 .HomePage {
   padding: 0 var(--padding-x) !important;
 
@@ -16,5 +18,19 @@
   aside {
     border-left: rgb(222, 222, 222) 1px solid;
     flex: 2;
+    @include media-breakpoint-down(md) {
+      border: none;
+      padding: 0 !important;
+    }
+  }
+
+  main {
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      padding: 0 !important;
+      .main-section {
+        padding: 0 !important;
+      }
+    }
   }
 }

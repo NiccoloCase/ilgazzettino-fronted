@@ -1,7 +1,9 @@
+import { useMemo } from "react";
 import { Article, ArticleComponent } from "../../components/Article";
 import { ArticleCarousel } from "../../components/ArticleCarousel";
 import { CategoryTitle } from "../../components/CategoryTitle";
 import VotingComponent from "../../components/VotingComponent";
+import { useDownBreakpoint } from "../../theme";
 
 export interface GridItem {
   type: "article" | "article-carousel";
@@ -768,7 +770,7 @@ export const HomePageMainSection = () => {
 
   return (
     <>
-      <main className="container-fluid m-0 p-0 my-4 d-flex">
+      <main className="container-fluid m-0 my-4 d-flex">
         <section className="main-section  pe-4">
           {MAIN_NEWS.map(renderGridItem)}
         </section>
