@@ -1,7 +1,6 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
 :root {
-  // --padding-x: 14.5rem;
   --padding-x: 15vw;
   --border-radius: 0px;
 }
@@ -15,19 +14,19 @@
 
 @include media-breakpoint-down(lg) {
   :root {
-    --padding-x: 2vw;
+    --padding-x: 1.5vw;
   }
 }
 
 @include media-breakpoint-down(md) {
   :root {
-    --padding-x: 0.5rem;
+    --padding-x: 4rem;
   }
 }
 
 @include media-breakpoint-down(sm) {
   :root {
-    --padding-x: 5px;
+    --padding-x: 8px;
   }
 }
 
