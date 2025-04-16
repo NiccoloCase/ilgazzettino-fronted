@@ -1,19 +1,33 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
 :root {
-  --padding-x: 14.5rem;
-  --border-radius: 30px;
+  // --padding-x: 14.5rem;
+  --padding-x: 15vw;
+  --border-radius: 0px;
+}
+
+// Between xlg and lg
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  :root {
+    --padding-x: 6lvw;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  :root {
+    --padding-x: 2vw;
+  }
 }
 
 @include media-breakpoint-down(md) {
   :root {
-    --padding-x: 2rem;
+    --padding-x: 0.5rem;
   }
 }
 
 @include media-breakpoint-down(sm) {
   :root {
-    --padding-x: 1.5rem;
+    --padding-x: 0rem;
   }
 }
 

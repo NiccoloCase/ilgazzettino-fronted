@@ -768,7 +768,7 @@ export const HomePageMainSection = () => {
 
   return (
     <>
-      <main className="container my-4 d-flex">
+      <main className="container-fluid m-0 p-0 my-4 d-flex">
         <section className="main-section  pe-4">
           {MAIN_NEWS.map(renderGridItem)}
         </section>
