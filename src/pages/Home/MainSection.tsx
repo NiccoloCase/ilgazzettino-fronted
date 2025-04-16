@@ -7,12 +7,10 @@ export interface GridItem {
   type: "article" | "article-carousel";
   data: Article | ArticleCarousel;
   category: string;
-  id: number;
 }
 
 export const MAIN_NEWS = [
   {
-    id: 1,
     type: "article",
     data: {
       category: "MESTRE",
@@ -27,7 +25,6 @@ export const MAIN_NEWS = [
     },
   },
   {
-    id: 2,
     type: "article",
     data: {
       category: "CAMPAGNA LUPIA",
@@ -45,7 +42,6 @@ export const MAIN_NEWS = [
     },
   },
   {
-    id: 3,
     type: "article",
     data: {
       category: "POLITICA",
@@ -60,7 +56,6 @@ export const MAIN_NEWS = [
   },
 
   {
-    id: 4,
     type: "article-carousel",
     data: {
       title: "",
@@ -98,7 +93,6 @@ export const MAIN_NEWS = [
   },
 
   {
-    id: 5,
     type: "article-carousel",
     data: {
       title: "",
@@ -128,7 +122,6 @@ export const MAIN_NEWS = [
   },
 
   {
-    id: 6,
     type: "article-carousel",
     data: {
       title: "",
@@ -157,7 +150,6 @@ export const MAIN_NEWS = [
     },
   },
   {
-    id: 7,
     type: "article-carousel",
     data: {
       title: "VIDEO",
@@ -192,7 +184,6 @@ export const MAIN_NEWS = [
   },
 
   {
-    id: 8,
     type: "article",
     data: {
       category: "Cultura, Spettacoli e Tv".toUpperCase(),
@@ -207,7 +198,6 @@ export const MAIN_NEWS = [
 
 const ASIDE_NEWS = [
   {
-    id: 1,
     type: "article",
     data: {
       category: "",
@@ -219,7 +209,6 @@ const ASIDE_NEWS = [
     },
   },
   {
-    id: 2,
     type: "article",
     data: {
       category: "",
@@ -234,7 +223,6 @@ const ASIDE_NEWS = [
     },
   },
   {
-    id: 3,
     type: "article",
     data: {
       category: "",
@@ -248,7 +236,6 @@ const ASIDE_NEWS = [
     },
   },
   {
-    id: 4,
     type: "article",
     data: {
       category: "",
@@ -262,7 +249,6 @@ const ASIDE_NEWS = [
     },
   },
   {
-    id: 5,
     type: "article",
     data: {
       category: "",
@@ -276,7 +262,6 @@ const ASIDE_NEWS = [
     },
   },
   {
-    id: 6,
     type: "article",
     data: {
       category: "",
@@ -290,7 +275,6 @@ const ASIDE_NEWS = [
     },
   },
   {
-    id: 7,
     type: "article",
     data: {
       category: "",
@@ -304,7 +288,6 @@ const ASIDE_NEWS = [
     },
   },
   {
-    id: 11,
     type: "article-carousel",
     data: {
       logo: "/assets/moltofood.svg",
@@ -333,7 +316,6 @@ const ASIDE_NEWS = [
     },
   },
   {
-    id: 11,
     type: "article-carousel",
     data: {
       title: "BLOG",
@@ -385,7 +367,6 @@ const ASIDE_NEWS = [
     },
   },
   {
-    id: 12,
     type: "article-carousel",
     data: {
       title: "IN VISITA",
@@ -401,7 +382,6 @@ const ASIDE_NEWS = [
     },
   },
   {
-    id: 13,
     type: "article-carousel",
     data: {
       title: "VENICE VISIT PASS",
@@ -418,7 +398,6 @@ const ASIDE_NEWS = [
   },
 
   {
-    id: 14,
     type: "article-carousel",
     data: {
       title: "LE PIU' CONDIVISE",
@@ -494,7 +473,6 @@ const CATEGORIES_ARTICLES = [
 
 const CATEGORIES_GRID = [
   {
-    id: 1,
     type: "article-carousel",
     data: {
       title: "MOTORI",
@@ -502,7 +480,6 @@ const CATEGORIES_GRID = [
     },
   },
   {
-    id: 2,
     type: "article-carousel",
     data: {
       title: "VIAGGI",
@@ -510,7 +487,6 @@ const CATEGORIES_GRID = [
     },
   },
   {
-    id: 3,
     type: "article-carousel",
     data: {
       title: "SALUTE",
@@ -518,7 +494,6 @@ const CATEGORIES_GRID = [
     },
   },
   {
-    id: 4,
     type: "article-carousel",
     data: {
       title: "MODA",
@@ -526,7 +501,6 @@ const CATEGORIES_GRID = [
     },
   },
   {
-    id: 4,
     type: "article-carousel",
     data: {
       title: "ANIMALI",
@@ -536,15 +510,21 @@ const CATEGORIES_GRID = [
 ] as GridItem[];
 
 export const HomePageMainSection = () => {
-  const renderGridItem = (item: GridItem) => {
+  const renderGridItem = (item: GridItem, index: number) => {
     switch (item.type) {
       case "article":
         return (
-          <ArticleComponent key={item.id} article={item.data as Article} />
+          <ArticleComponent
+            key={"ITEM" + index}
+            article={item.data as Article}
+          />
         );
       case "article-carousel":
         return (
-          <ArticleCarousel key={item.id} data={item.data as ArticleCarousel} />
+          <ArticleCarousel
+            key={"ITEM" + index}
+            data={item.data as ArticleCarousel}
+          />
         );
       default:
         return null;
