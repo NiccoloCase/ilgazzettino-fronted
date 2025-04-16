@@ -57,7 +57,7 @@ export const HomePage: React.FC = () => {
         ))}
       </div>
 
-      <div className="adv text-secondary text-center py-4 mt-3">
+      <div className="adv text-secondary text-center py-4 mt-3 d-none d-sm-block">
         <small>adv</small>
       </div>
 

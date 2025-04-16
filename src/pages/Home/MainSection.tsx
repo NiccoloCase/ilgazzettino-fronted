@@ -1,9 +1,7 @@
-import { useMemo } from "react";
 import { Article, ArticleComponent } from "../../components/Article";
 import { ArticleCarousel } from "../../components/ArticleCarousel";
 import { CategoryTitle } from "../../components/CategoryTitle";
 import VotingComponent from "../../components/VotingComponent";
-import { useDownBreakpoint } from "../../theme";
 import { ASIDE_NEWS, CATEGORIES_GRID, GridItem, MAIN_NEWS } from "./content";
 
 export const HomePageMainSection = () => {

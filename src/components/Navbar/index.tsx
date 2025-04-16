@@ -123,6 +123,10 @@ const Navbar: React.FC = () => {
 
   return (
     <>
+      <div className="mobile-adv text-secondary text-center py-5 d-block d-sm-none">
+        <small>adv</small>
+      </div>
+
       <header
         ref={headerRef}
         className={
