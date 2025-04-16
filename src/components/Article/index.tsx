@@ -128,7 +128,7 @@ export const ArticleComponent: React.FC<{
   };
 
   const renderContent = () => {
-    if (aside)
+    if (aside && (!others || others.length < 2))
       return (
         <article
           className={classnames("main-article", size, {
@@ -154,6 +154,39 @@ export const ArticleComponent: React.FC<{
               {renderOtherNews()}
               {renderFooter()}
             </div>
+          </div>
+        </article>
+      );
+
+    if (aside)
+      return (
+        <article
+          className={classnames("main-article", size, {
+            nomargin: noMargin,
+          })}
+          style={{
+            borderBottom: noBorderBottom
+              ? "none"
+              : "rgb(222, 222, 222) 1px solid",
+          }}
+        >
+          {category && (
+            <header>
+              <p className="section-title mb-1">{category}</p>
+            </header>
+          )}
+          <div className="row">
+            <div className={smallImage ? "col-md-4" : "col-md-6"}>
+              {renderImage()}
+            </div>
+            <div className={smallImage ? "col-md-8" : "col-md-6"}>
+              {renderTitle()}
+            </div>
+          </div>
+
+          <div>
+            {renderOtherNews()}
+            {renderFooter()}
           </div>
         </article>
       );

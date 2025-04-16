@@ -54,7 +54,6 @@ export const MAIN_NEWS = [
       aside: true,
     },
   },
-
   {
     type: "article-carousel",
     data: {
@@ -78,7 +77,6 @@ export const MAIN_NEWS = [
           aside: false,
           size: "small",
         },
-
         {
           category: "IL LUTTO",
           imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
@@ -89,6 +87,60 @@ export const MAIN_NEWS = [
           size: "small",
         },
       ],
+    },
+  },
+
+  {
+    type: "article",
+    data: {
+      category: "VICENZA",
+      imgs: [{ src: "https://placehold.co/227x125", alt: "lorem ipsum" }],
+      title:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+      others: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+      ],
+      author: "Giovanni Bianchi",
+      aside: true,
+    },
+  },
+  {
+    type: "article-carousel",
+    data: {
+      title: "",
+      articles: [
+        {
+          category: "L'INTERVENTO",
+          imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          others: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit."],
+          size: "medium",
+        },
+        {
+          category: "ECONOMIA",
+          imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          others: [
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, facilis necessitatibus. Possimus iusto dolorum vitae.",
+          ],
+          size: "medium",
+        },
+      ],
+    },
+  },
+
+  {
+    type: "article",
+    data: {
+      category: "L'OFFERTA",
+      imgs: [{ src: "/assets/promo.jpg", alt: "Promo" }],
+      title:
+        "Abbonamento al giornale digitale e al sito a soli 9€/mese per 1 anno",
+      author: "Giovanni Bianchi",
+      aside: true,
+      hideButtons: true,
     },
   },
 
@@ -183,15 +235,180 @@ export const MAIN_NEWS = [
     },
   },
 
+  ////////////////////////////////////////////////////////////
+  /// CULTURA
+  ////////////////////////////////////////////////////////////
   {
-    type: "article",
+    type: "article-carousel",
     data: {
-      category: "Cultura, Spettacoli e Tv".toUpperCase(),
-      imgs: [{ src: "https://placehold.co/227x125", alt: "lorem ipsum" }],
-      title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      title: "Cultura, Spettacoli e Tv".toUpperCase(),
+      articles: [
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/220x130", alt: "lorem ipsum" }],
+          title:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam provident iure, consequuntur iste ullam quasi.",
+          author: "Mario Bianchi",
+          aside: true,
+        },
+      ],
+    },
+  },
 
-      author: "Mario Bianchi",
-      aside: true,
+  {
+    type: "article-carousel",
+    data: {
+      title: "",
+      articles: [
+        {
+          imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          others: [
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident voluptas corrupti id impedit natus voluptate ratione similique in rerum.",
+          ],
+          author: "Giovanni Rossi",
+          aside: false,
+          size: "small",
+        },
+        {
+          imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          others: [
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero architecto non dolor vel voluptas ut, aliquid ullam officia molestias, veniam nesciunt.",
+          ],
+          author: "Marco Bianchi",
+          aside: false,
+          size: "small",
+        },
+        {
+          imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          others: ["Foto"],
+          author: "Elon Musk",
+          aside: false,
+          size: "small",
+        },
+      ],
+    },
+  },
+
+  ////////////////////////////////////////////////////////////
+  /// SPORT
+  ////////////////////////////////////////////////////////////
+  {
+    type: "article-carousel",
+    data: {
+      title: "Sport".toUpperCase(),
+      articles: [
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/220x130", alt: "lorem ipsum" }],
+          title:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam provident iure, consequuntur iste ullam quasi.",
+          author: "Giovanni Pascoli",
+          aside: true,
+        },
+      ],
+    },
+  },
+
+  {
+    type: "article-carousel",
+    data: {
+      title: "",
+      articles: [
+        {
+          imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          others: ["Lorem ipsum dolor sit amet consectetur adipisicing elit."],
+          author: "Redazione sport",
+          aside: false,
+          size: "small",
+        },
+        {
+          imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          others: [
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, officiis.",
+          ],
+          author: "Redazione sport",
+          aside: false,
+          size: "small",
+        },
+        {
+          imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+          title:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, officiis.",
+          others: ["Lorem ipsum dolor sit amet consectetur adipisicing elit."],
+          author: "Redazione sport",
+          aside: false,
+          size: "small",
+        },
+      ],
+    },
+  },
+
+  ////////////////////////////////////////////////////////////
+  /// GOSSIP
+  ////////////////////////////////////////////////////////////
+  {
+    type: "article-carousel",
+    data: {
+      title: "Gossip".toUpperCase(),
+      articles: [
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/220x130", alt: "lorem ipsum" }],
+          title:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam provident iure, consequuntur iste ullam quasi.",
+          author: "Giovanni Rana",
+          aside: true,
+          others: [
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam provident iure, consequuntur iste ullam quasi.",
+            "VIDEO",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    type: "article-carousel",
+    data: {
+      title: "",
+      articles: [
+        {
+          imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          others: [
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "VIDEO",
+          ],
+          author: "Redazione Web",
+          aside: false,
+          size: "small",
+          video: true,
+        },
+        {
+          imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+
+          author: "Redazione Web",
+          aside: false,
+          size: "small",
+          video: true,
+        },
+        {
+          imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+          title:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, officiis.",
+          others: ["Lorem ipsum dolor sit amet consectetur adipisicing elit."],
+          author: "Redazione Web",
+          aside: false,
+          size: "small",
+          video: true,
+        },
+      ],
     },
   },
 ] as GridItem[];
