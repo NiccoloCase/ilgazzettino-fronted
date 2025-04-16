@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import GazzettinoNavbar from "../components/Navbar";
+import Navbar from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { Drawer } from "../components/Drawer";
 import { useStore } from "../store";
@@ -20,7 +20,7 @@ export const Layout = () => {
           }
         }}
       >
-        <GazzettinoNavbar />
+        <Navbar />
         <Outlet />
         <Footer />
       </div>

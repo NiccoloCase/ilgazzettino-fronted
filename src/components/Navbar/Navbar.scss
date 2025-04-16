@@ -55,3 +55,47 @@
   padding: 1rem;
   text-align: center;
 }
+
+.mobile-menu {
+  background-color: rgb(0, 90, 132);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000000;
+  padding: 1rem 1rem;
+  color: #fff;
+  overflow-x: none;
+  overflow-y: scroll !important;
+
+  &.open {
+    display: block;
+  }
+
+  .mobile-search {
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    border-radius: 7px;
+    padding: 0.5rem;
+    overflow: hidden;
+    color: var(--dark-grey);
+
+    input {
+      outline: none;
+      background-color: transparent;
+      border: none;
+      flex: 1;
+    }
+  }
+
+  button {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+  }
+}

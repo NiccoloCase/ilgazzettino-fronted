@@ -1,27 +1,66 @@
 import React, { useMemo, useState, useEffect, useRef } from "react";
 import { faUser as faUserRegular } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronDown,
+  faChevronUp,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 import Hamburger from "hamburger-react";
 import { faFacebookF, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { palette } from "../../config";
-
 import "./Navbar.scss";
 import NotificationBell from "../NotificationBell";
 import { SearchBar } from "../SearchBar";
 import { useStore } from "../../store";
 import { useDownBreakpoint } from "../../theme";
+import classNames from "classnames";
+import { menuData } from "../Drawer/menuData";
 
-const GazzettinoNavbar: React.FC = () => {
+const Navbar: React.FC = () => {
+  // Se l'header è uscito dalla view port (desktop)
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  // Altezza dell'header
   const [headerHeight, setHeaderHeight] = useState(0);
+  // Riferimento all'header
   const headerRef = useRef<HTMLElement | null>(null);
-
+  // Drawer
   const isDrawerOpen = useStore((s) => s.isDrawerOpen);
   const setIsDrawerOpen = useStore((s) => s.setIsDrawerOpen);
-
+  // Mobile Menu
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // Se siamo su schermo mobile
   const isMobile = useDownBreakpoint("md");
+  // Sezioni espanse nel menu mobile
+  const [mobileMenuExpandedSections, setMobileMenuExpandedSections] = useState<
+    string[]
+  >(["SEZIONI"]);
+
+  const isMenuOpen = useMemo(() => {
+    return isDrawerOpen || isMobileMenuOpen;
+  }, [isDrawerOpen, isMobileMenuOpen]);
+
+  // Chiude drawer o mobile menu quando l'aspect ratio cambia per evitare bugs
+  useEffect(() => {
+    if (!isMobile && isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    } else if (isMobile && isDrawerOpen) {
+      setIsDrawerOpen(false);
+    }
+  }, [isMobile]);
+
+  // Impedisce lo scroll della pagina quando il menu mobile è aperto
+  useEffect(() => {
+    document.body.style.overflow = !isMobileMenuOpen ? "auto" : "hidden";
+  }, [isMobileMenuOpen]);
+
+  const toggleMenu = () => {
+    if (isMobile) {
+      setIsMobileMenuOpen((s) => !s);
+    } else {
+      setIsDrawerOpen(!isDrawerOpen);
+    }
+  };
 
   const updateTimeText = useMemo(() => {
     const date = new Date().toLocaleDateString("it-IT", {
@@ -59,13 +98,17 @@ const GazzettinoNavbar: React.FC = () => {
       } else {
         setIsHeaderHidden(false);
       }
-
-      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY, headerHeight, isMobile]);
+  }, [headerHeight, isMobile]);
+
+  const toggleSection = (title: string) => {
+    setMobileMenuExpandedSections((prev) =>
+      prev.includes(title) ? prev.filter((t) => t !== title) : [...prev, title]
+    );
+  };
 
   const renderUpdateTime = () => {
     return (
@@ -89,9 +132,9 @@ const GazzettinoNavbar: React.FC = () => {
           <div className="d-flex align-items-center z-1">
             <button
               className="d-flex align-items-center border-0 p-0 m-0 bg-transparent"
-              onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+              onClick={toggleMenu}
             >
-              <Hamburger toggled={isDrawerOpen} size={20} label="Menu" />
+              <Hamburger toggled={isMenuOpen} size={20} label="Menu" />
               <span className="fw-bold d-none d-md-inline ">
                 <small>MENU</small>
               </span>
@@ -155,12 +198,68 @@ const GazzettinoNavbar: React.FC = () => {
           </div>
         </div>
       </header>
-
+      {/** MOBILE UPDATE TIME */}
       <section className="mobile-time-section d-block d-md-none border-bottom ">
         {renderUpdateTime()}
       </section>
+
+      {/** MOBILE MENU */}
+      <nav
+        className={classNames("mobile-menu", { open: isMobileMenuOpen })}
+        style={{
+          height: "calc(100vh - " + headerHeight + "px )",
+          marginTop: headerHeight + "px",
+        }}
+      >
+        <div className="mobile-search mb-5">
+          <input type="text" placeholder="Ricerca su Il Gazzettino" />
+          <FontAwesomeIcon icon={faSearch} />
+        </div>
+
+        {menuData.map((section, idx) => (
+          <div key={idx} className="mb-3 border-bottom border-black ">
+            <button
+              className="fw-bold text-uppercase pb-1 mb-2"
+              onClick={() => {
+                toggleSection(section.title);
+              }}
+            >
+              {section.title}{" "}
+              <FontAwesomeIcon
+                icon={
+                  mobileMenuExpandedSections.includes(section.title)
+                    ? faChevronUp
+                    : faChevronDown
+                }
+                className="ms-2"
+                style={{ fontSize: "0.8rem" }}
+              />
+            </button>
+            {mobileMenuExpandedSections.includes(section.title) && (
+              <div className="d-flex flex-wrap">
+                {section.items.map((item, subIdx) => (
+                  <div key={subIdx} className="col-6 mb-1">
+                    {item.expandable ? (
+                      <>
+                        {item.title.charAt(0).toUpperCase() +
+                          item.title.slice(1).toLocaleLowerCase()}{" "}
+                        <span className="text-info">▾</span>
+                      </>
+                    ) : (
+                      <p>
+                        {item.title.charAt(0).toUpperCase() +
+                          item.title.slice(1).toLocaleLowerCase()}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </nav>
     </>
   );
 };
 
-export default GazzettinoNavbar;
+export default Navbar;

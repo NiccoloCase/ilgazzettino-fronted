@@ -48,6 +48,14 @@ export const menuData = [
         title: "OROSCOPO",
         expandable: true,
       },
+      {
+        title: "LEGALMENTE",
+        expandable: true,
+      },
+      {
+        title: "NECROLOGIE",
+        expandable: true,
+      },
     ],
     expandable: true,
   },
