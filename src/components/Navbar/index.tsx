@@ -165,7 +165,7 @@ const Navbar: React.FC = () => {
 
           <div className="d-flex align-items-center z-1">
             <NotificationBell />
-            <div className="d-flex ps-4 social-btn">
+            <div className="d-flex ps-3 social-btn">
               <a href="https://www.facebook.com/gazzettino.it" className="me-3">
                 <FontAwesomeIcon
                   icon={faFacebookF}
