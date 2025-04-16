@@ -96,40 +96,6 @@ export const HomePage: React.FC = () => {
 
       <HotNews />
 
-      {/* News Grid */}
-      {/* <div className="container my-4">
-        <div className="row g-4">
-          {[...news, ...news, ...news, ...news, ...news, ...news].map(
-            (item, i) => (
-              <div className="col-12 col-md-6 col-lg-3" key={i}>
-                <div className="card h-100">
-                  <div className="position-relative">
-                    <img
-                      src={item.img}
-                      className="card-img-top"
-                      alt={item.title.slice(0, 20)}
-                    />
-                    {item.video && (
-                      <span className="position-absolute top-0 start-0 bg-dark text-white px-2 py-1 small">
-                        ▶
-                      </span>
-                    )}
-                  </div>
-                  <div className="card-body">
-                    <p className="card-text small fw-bold">{item.title}</p>
-                    {item.author && (
-                      <p className="card-text text-muted small">
-                        di {item.author}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </div>
-            )
-          )}
-        </div>
-      </div> */}
-
       <HomePageMainSection />
 
       {/* 

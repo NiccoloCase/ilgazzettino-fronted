@@ -774,7 +774,7 @@ export const HomePageMainSection = () => {
         <section className="main-section  pe-4">
           {MAIN_NEWS.map(renderGridItem)}
         </section>
-
+        {/* 
         <aside className="ps-4">
           <CategoryTitle title="Il Video del Giorno" black />
           <div className="mt-3 mb-4">
@@ -803,10 +803,10 @@ export const HomePageMainSection = () => {
             <CategoryTitle title="SONDAGGGI" black />
             <VotingComponent />
           </div>
-        </aside>
+        </aside> */}
       </main>
 
-      <section>{CATEGORIES_GRID.map(renderGridItem)}</section>
+      {/* <section>{CATEGORIES_GRID.map(renderGridItem)}</section> */}
     </>
   );
 };

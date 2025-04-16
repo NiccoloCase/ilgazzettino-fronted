@@ -163,14 +163,16 @@ export const ArticleComponent: React.FC<{
               <p className="section-title mb-1">{category}</p>
             </header>
           )}
-          <div className="row">
-            <div className={smallImage ? "col-md-4" : "col-md-6"}>
-              {renderImage()}
-            </div>
-            <div className={smallImage ? "col-md-8" : "col-md-6"}>
-              {renderTitle()}
-              {renderOtherNews()}
-              {renderFooter()}
+          <div className="container-fluid">
+            <div className="row">
+              <div className={(smallImage ? "col-md-4" : "col-md-6") + " p-0"}>
+                {renderImage()}
+              </div>
+              <div className={(smallImage ? "col-md-8" : "col-md-6") + " p-0"}>
+                {renderTitle()}
+                {renderOtherNews()}
+                {renderFooter()}
+              </div>
             </div>
           </div>
         </article>
@@ -193,12 +195,14 @@ export const ArticleComponent: React.FC<{
               <p className="section-title mb-1">{category}</p>
             </header>
           )}
-          <div className="row">
-            <div className={smallImage ? "col-md-4" : "col-md-6"}>
-              {renderImage()}
-            </div>
-            <div className={smallImage ? "col-md-8" : "col-md-6"}>
-              {renderTitle()}
+          <div className="container-fluid">
+            <div className="row">
+              <div className={(smallImage ? "col-md-4" : "col-md-6") + " p-0"}>
+                {renderImage()}
+              </div>
+              <div className={(smallImage ? "col-md-8" : "col-md-6") + " p-0"}>
+                {renderTitle()}
+              </div>
             </div>
           </div>
 
