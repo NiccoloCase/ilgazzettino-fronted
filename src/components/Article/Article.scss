@@ -1,3 +1,5 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
 .main-article {
   margin-bottom: 2rem;
 
@@ -124,6 +126,23 @@
       text-decoration: none;
       &:hover {
         text-decoration: underline;
+      }
+    }
+  }
+
+  &.aside {
+    .row {
+      > :nth-child(1) {
+        padding: 0;
+      }
+
+      > :nth-child(2) {
+        padding: 0;
+        padding-left: 1rem;
+
+        @include media-breakpoint-down(md) {
+          padding-left: 0rem;
+        }
       }
     }
   }

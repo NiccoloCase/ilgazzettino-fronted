@@ -48,29 +48,27 @@ export const ArticleComponent: React.FC<{
     return (
       <div className="d-flex gap-2 mb-2 w-100">
         {imgs.map((img, index) => (
-          <div
+          <figure
+            key={index}
             className="image-wrapper"
             style={{
               width: `${100 / imgs.length}%`,
+              margin: 0,
             }}
           >
-            <img
-              key={index}
-              src={img.src}
-              alt={img.alt}
-              className="img-fluid"
-            />
+            <img src={img.src} alt={img.alt} className="img-fluid" />
+
             {action && (
               <div className={"image-overlay " + actionPosition}>
-                <div className="video-player ">
+                <div className="video-player">
                   <FontAwesomeIcon
                     icon={action === "video" ? faPlay : faCamera}
                     style={{ width: "30%", height: "auto" }}
-                  ></FontAwesomeIcon>
+                  />
                 </div>
               </div>
             )}
-          </div>
+          </figure>
         ))}
       </div>
     );
@@ -151,6 +149,7 @@ export const ArticleComponent: React.FC<{
         <article
           className={classnames("main-article", size, {
             nomargin: noMargin,
+            aside: true,
           })}
           style={{
             borderBottom: noBorderBottom
@@ -165,10 +164,10 @@ export const ArticleComponent: React.FC<{
           )}
           <div className="container-fluid">
             <div className="row">
-              <div className={(smallImage ? "col-md-4" : "col-md-6") + " p-0"}>
+              <div className={smallImage ? "col-md-4" : "col-md-6"}>
                 {renderImage()}
               </div>
-              <div className={(smallImage ? "col-md-8" : "col-md-6") + " p-0"}>
+              <div className={smallImage ? "col-md-8" : "col-md-6"}>
                 {renderTitle()}
                 {renderOtherNews()}
                 {renderFooter()}
@@ -183,6 +182,7 @@ export const ArticleComponent: React.FC<{
         <article
           className={classnames("main-article", size, {
             nomargin: noMargin,
+            aside: true,
           })}
           style={{
             borderBottom: noBorderBottom
@@ -197,10 +197,10 @@ export const ArticleComponent: React.FC<{
           )}
           <div className="container-fluid">
             <div className="row">
-              <div className={(smallImage ? "col-md-4" : "col-md-6") + " p-0"}>
+              <div className={smallImage ? "col-md-4" : "col-md-6"}>
                 {renderImage()}
               </div>
-              <div className={(smallImage ? "col-md-8" : "col-md-6") + " p-0"}>
+              <div className={smallImage ? "col-md-8" : "col-md-6"}>
                 {renderTitle()}
               </div>
             </div>

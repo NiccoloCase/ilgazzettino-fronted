@@ -14,9 +14,7 @@ export type ArticleCarousel = {
 export const ArticleCarousel: React.FC<{
   data: ArticleCarousel;
 }> = ({ data }) => {
-  const md = useDownBreakpoint("md");
-
-  const vertical = md ? true : data.vertical;
+  const vertical = data.vertical;
 
   return (
     <div
@@ -43,7 +41,7 @@ export const ArticleCarousel: React.FC<{
       >
         {data.articles.map((article, index) => (
           <div
-            className={vertical ? (data.noMargin ? "" : "mb-3") : "col"}
+            className={vertical ? (data.noMargin ? "" : "mb-3") : "col-md"}
             key={index}
           >
             <ArticleComponent
