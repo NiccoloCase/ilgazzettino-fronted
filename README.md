@@ -21,6 +21,10 @@ This project is a frontend replica of the homepage of [Il Gazzettino](https://ww
 - **SCSS**
 - **HTML**
 
+## Live Demo
+
+You can view the live version of the project here: https://ilgazzettino.netlify.app
+
 ## Getting Started
 
 To run the project locally:
