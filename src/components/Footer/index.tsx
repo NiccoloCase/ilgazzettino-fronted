@@ -6,7 +6,7 @@ export const Footer: React.FC = () => {
     <footer className="Footer mt-5 text-muted small" role="contentinfo">
       <div className="container">
         <nav className="row" aria-label="Related publications">
-          <div className="col-md-8 text-left left-links">
+          <div className="col-md-8 text-left left-links d-none d-md-block">
             <ul className="list-unstyled d-flex flex-wrap">
               <li>
                 <a href="#" className="px-2">
@@ -40,6 +40,12 @@ export const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
+
+          <address className="text-center d-block d-md-none">
+            <p className="mb-0">
+              <span>© 2025 ilgazzettino - C.F. e P. IVA 02742610278</span>
+            </p>
+          </address>
 
           <nav
             className="col-md-4 text-right right-links"
@@ -75,7 +81,7 @@ export const Footer: React.FC = () => {
           </nav>
         </nav>
 
-        <div className="mt-4 mb-2 bottom-links">
+        <div className="mt-4 mb-2 bottom-links d-none d-md-block">
           <address>
             <p className="mb-0">
               Società editrice © 2025 Il Gazzettino

@@ -1,3 +1,5 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
 .Footer {
   border-top: rgb(222, 222, 222) 1px solid;
   font-size: 0.75rem;
@@ -31,6 +33,10 @@
       justify-content: flex-end;
       align-items: center;
       line-height: 16px;
+
+      @include media-breakpoint-down(md) {
+        justify-content: center !important;
+      }
     }
 
     li {
@@ -47,6 +53,14 @@
         transform: translateY(-50%);
         height: 60%;
         border-right: 1px solid var(--dark-grey);
+
+        @include media-breakpoint-down(md) {
+          display: none;
+        }
+      }
+
+      @include media-breakpoint-down(md) {
+        border: #000 solid 1px;
       }
     }
   }
