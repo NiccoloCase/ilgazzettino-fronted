@@ -85,6 +85,8 @@ export const MAIN_NEWS = [
           author: "Giovanni Bianchi",
           aside: false,
           size: "small",
+          action: "video",
+          actionPosition: "right",
         },
       ],
     },
@@ -211,12 +213,16 @@ export const MAIN_NEWS = [
           imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           size: "small",
+          action: "video",
+          actionPosition: "center",
         },
         {
           category: "",
           imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           size: "small",
+          action: "video",
+          actionPosition: "center",
         },
 
         {
@@ -224,12 +230,16 @@ export const MAIN_NEWS = [
           imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           size: "small",
+          action: "video",
+          actionPosition: "center",
         },
         {
           category: "",
           imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           size: "small",
+          action: "video",
+          actionPosition: "center",
         },
       ],
     },
@@ -287,6 +297,8 @@ export const MAIN_NEWS = [
           author: "Elon Musk",
           aside: false,
           size: "small",
+          action: "photo",
+          actionPosition: "center",
         },
       ],
     },
@@ -324,6 +336,8 @@ export const MAIN_NEWS = [
           author: "Redazione sport",
           aside: false,
           size: "small",
+          action: "video",
+          actionPosition: "center",
         },
         {
           imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
@@ -334,6 +348,8 @@ export const MAIN_NEWS = [
           author: "Redazione sport",
           aside: false,
           size: "small",
+          action: "video",
+          actionPosition: "center",
         },
         {
           imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
@@ -343,6 +359,8 @@ export const MAIN_NEWS = [
           author: "Redazione sport",
           aside: false,
           size: "small",
+          action: "video",
+          actionPosition: "center",
         },
       ],
     },
@@ -769,6 +787,8 @@ export const HomePageMainSection = () => {
                 category: "",
                 author: "",
                 size: "medium",
+                action: "video",
+                actionPosition: "center",
               }}
             />
           </div>

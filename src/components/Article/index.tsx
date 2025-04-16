@@ -1,5 +1,5 @@
 import { faFacebookF, faXTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faReply } from "@fortawesome/free-solid-svg-icons";
+import { faCamera, faPlay, faReply } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Article.scss";
 import { useMemo } from "react";
@@ -16,6 +16,8 @@ export interface Article {
   smallImage?: boolean;
   hideButtons?: boolean;
   noMargin?: boolean;
+  action?: "video" | "photo";
+  actionPosition?: "center" | "right";
 }
 
 export const ArticleComponent: React.FC<{
@@ -31,6 +33,8 @@ export const ArticleComponent: React.FC<{
     author,
     aside,
     hideButtons,
+    action,
+    actionPosition,
     smallImage,
     noMargin,
   } = article;
@@ -44,15 +48,29 @@ export const ArticleComponent: React.FC<{
     return (
       <div className="d-flex gap-2 mb-2 w-100">
         {imgs.map((img, index) => (
-          <img
-            key={index}
-            src={img.src}
-            alt={img.alt}
-            className="img-fluid"
+          <div
+            className="image-wrapper"
             style={{
               width: `${100 / imgs.length}%`,
             }}
-          />
+          >
+            <img
+              key={index}
+              src={img.src}
+              alt={img.alt}
+              className="img-fluid"
+            />
+            {action && (
+              <div className={"image-overlay " + actionPosition}>
+                <div className="video-player ">
+                  <FontAwesomeIcon
+                    icon={action === "video" ? faPlay : faCamera}
+                    style={{ width: "30%", height: "auto" }}
+                  ></FontAwesomeIcon>
+                </div>
+              </div>
+            )}
+          </div>
         ))}
       </div>
     );
