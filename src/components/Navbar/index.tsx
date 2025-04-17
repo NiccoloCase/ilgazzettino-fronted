@@ -123,15 +123,16 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <div className="mobile-adv text-secondary text-center py-5 d-block d-sm-none">
-        <small>adv</small>
-      </div>
-
+      {!isMobileMenuOpen && (
+        <div className="mobile-adv text-secondary text-center py-5 d-block d-sm-none">
+          <small>adv</small>
+        </div>
+      )}
       <header
         ref={headerRef}
         className={
           "Navbar border-bottom bg-white w-100 py-1 " +
-          (isHeaderHidden ? "fixed-nav" : "position-relative")
+          (isMobile ? "" : isHeaderHidden ? "fixed-nav" : "position-relative")
         }
         style={{ fontSize: "14px" }}
       >
