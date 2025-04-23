@@ -18,7 +18,7 @@ export const CategoryTitle = ({ title, black, logo }: CategoryTitleProps) => {
 
   return (
     <div style={{ display: "inline-block" }} className="w-100">
-      <h3
+      <h2
         style={{
           color: black ? "#000" : "#055C85",
           fontWeight: 600,
@@ -29,7 +29,7 @@ export const CategoryTitle = ({ title, black, logo }: CategoryTitleProps) => {
         }}
       >
         {!!logo ? <img src={logo} alt={extractAlt(logo)} height={20} /> : title}
-      </h3>
+      </h2>
       <div
         style={{
           height: "2px",

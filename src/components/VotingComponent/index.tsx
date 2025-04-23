@@ -20,10 +20,10 @@ const VotingComponent: React.FC = () => {
 
   return (
     <Container className="my-2 VotingComponent py-1">
-      <h6 id="poll-title">
+      <p id="poll-title">
         Sondaggio: Umana Reyer-Trieste - Chi è il miglior giocatore orogranata
         della partita? VOTATE
-      </h6>
+      </p>
       <Form aria-labelledby="poll-title">
         <fieldset>
           <legend className="visually-hidden">Seleziona un giocatore</legend>
