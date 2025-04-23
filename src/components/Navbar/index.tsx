@@ -124,7 +124,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       {!isMobileMenuOpen && (
-        <div className="mobile-adv text-secondary text-center py-5 d-block d-sm-none">
+        <div className="mobile-adv  text-center py-5 d-block d-sm-none">
           <small>adv</small>
         </div>
       )}
@@ -196,10 +196,7 @@ const Navbar: React.FC = () => {
             <span className="me-3 nav-btn login-btn">
               <small>ACCEDI</small>
             </span>
-            <span
-              style={{ color: palette.primary }}
-              className="fw-bold nav-btn promo-btn"
-            >
+            <span className="fw-bold nav-btn promo-btn">
               <small>PROMO FLASH</small>
             </span>
             <a href="#" className="ms-3 user-btn" aria-label="User Profile">

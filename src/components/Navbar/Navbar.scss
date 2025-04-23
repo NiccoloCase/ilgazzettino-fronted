@@ -7,6 +7,10 @@
   left: 0;
   z-index: 1000;
 
+  .promo-btn {
+    color: color-mix(in srgb, var(--primary) 99%, black 1%);
+  }
+
   .user-btn {
     display: none;
     margin-right: 0.5rem;
@@ -104,4 +108,5 @@
 
 .mobile-adv {
   background-color: #eeeeee;
+  color: #505050 !important;
 }

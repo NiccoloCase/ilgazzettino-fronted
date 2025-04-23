@@ -16,10 +16,11 @@
 
   .adv {
     background-color: #eeeeee;
+    color: #606060 !important;
   }
 
   .region-btn {
-    background-color: var(--primary);
+    background-color: color-mix(in srgb, var(--primary) 99%, black 1%);
     cursor: pointer;
     transition: all 0.3s;
     &:hover {

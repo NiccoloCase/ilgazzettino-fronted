@@ -162,5 +162,5 @@
   font-size: 0.9rem;
   font-weight: bold;
   margin-bottom: 1.2rem;
-  color: var(--primary);
+  color: color-mix(in srgb, var(--primary) 99%, black 1%); // accessibilty fix
 }

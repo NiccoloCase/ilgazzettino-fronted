@@ -47,7 +47,7 @@ export const HomePage: React.FC = () => {
       <div
         className=" text-white text-center d-none d-md-flex justify-content-center flex-wrap"
         style={{
-          background: palette.primary,
+          background: "color-mix(in srgb, var(--primary) 99%, black 1%)",
         }}
       >
         {REGIONS.map((r, i) => (
@@ -63,7 +63,7 @@ export const HomePage: React.FC = () => {
         ))}
       </div>
 
-      <div className="adv text-secondary text-center py-4 mt-3 d-none d-sm-block">
+      <div className="adv ttext-center py-4 mt-3 d-none d-sm-block">
         <small>adv</small>
       </div>
 
