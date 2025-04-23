@@ -184,7 +184,7 @@ export const ArticleComponent: React.FC<{
               : "rgb(222, 222, 222) 1px solid",
           }}
         >
-          <header>{renderCatgory()}</header>
+          {category && <header>{renderCatgory()}</header>}
           <div className="container-fluid">
             <div className="row">
               <div className={smallImage ? "col-md-4" : "col-md-6"}>
@@ -214,7 +214,7 @@ export const ArticleComponent: React.FC<{
               : "rgb(222, 222, 222) 1px solid",
           }}
         >
-          <header>{renderCatgory()}</header>
+          {category && <header>{renderCatgory()}</header>}
           <div className="container-fluid">
             <div className="row">
               <div className={smallImage ? "col-md-4" : "col-md-6"}>
@@ -245,12 +245,10 @@ export const ArticleComponent: React.FC<{
               : "rgb(222, 222, 222) 1px solid",
           }}
         >
-          <header>
-            {renderCatgory()}
-            <div className="order-2 order-md-1">{renderImage()}</div>
-            {renderCatgory(false)}
-            {renderTitle()}
-          </header>
+          {category && <header>{renderCatgory()}</header>}
+          <div className="order-2 order-md-1">{renderImage()}</div>
+          {renderCatgory(false)}
+          {renderTitle()}
 
           {renderOtherNews()}
           {renderFooter()}

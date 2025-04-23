@@ -1,8 +1,9 @@
 .VotingComponent {
   background-color: #ededed;
-  h6 {
+  #poll-title {
     transition: all 0.4s;
     color: var(--secondary);
+
     text-decoration: none;
     margin: 1rem 0;
     &:hover {
@@ -29,6 +30,6 @@
   }
   .results-btn {
     background-color: #ededed !important;
-    color: var(--secondary);
+    color: var(--secondary) M;
   }
 }
