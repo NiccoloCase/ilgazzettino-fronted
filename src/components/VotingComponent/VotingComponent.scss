@@ -2,7 +2,7 @@
   background-color: #ededed;
   h6 {
     transition: all 0.4s;
-    color: var(--primary);
+    color: var(--secondary);
     text-decoration: none;
     margin: 1rem 0;
     &:hover {
@@ -21,14 +21,14 @@
 
   .vote-btn {
     background-color: rgb(222, 222, 222);
-    color: var(--primary);
+    color: var(--seconary);
     &:active {
-      background-color: rgb(10, 80, 118);
+      background-color: var(--secondary);
       color: #fff;
     }
   }
   .results-btn {
     background-color: #ededed !important;
-    color: rgb(10, 80, 118);
+    color: var(--secondary);
   }
 }

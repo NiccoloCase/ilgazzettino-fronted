@@ -5,7 +5,7 @@ const myConfig: ConfigSchema = {
     global: {
       palette: {
         primary: "#e8711d",
-        secondary: "#F5CD47",
+        secondary: "rgb(10, 80, 118)",
         text_primary: "#000000",
         backgroundDark: "#1D1D1B",
         backgroundLight: "#F5F5F5",

@@ -46,9 +46,13 @@
   }
 
   .social-icon {
-    color: rgb(222, 222, 222);
+    color: rgb(150, 150, 150);
     transition: color 0.3s ease;
     text-decoration: none;
+
+    small {
+      color: rgb(115, 115, 115) !important;
+    }
   }
   .image-wrapper {
     position: relative;

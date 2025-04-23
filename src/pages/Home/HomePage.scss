@@ -11,7 +11,7 @@
   }
 
   .hot-link {
-    color: rgb(10, 80, 118) !important;
+    color: var(--secondary) !important;
   }
 
   .adv {
@@ -23,7 +23,7 @@
     cursor: pointer;
     transition: all 0.3s;
     &:hover {
-      background-color: rgb(10, 80, 118) !important;
+      background-color: var(--secondary) !important;
       height: 100%;
     }
   }
