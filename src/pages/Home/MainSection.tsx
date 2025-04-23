@@ -11,6 +11,7 @@ export const HomePageMainSection = () => {
         return (
           <ArticleComponent
             key={"ITEM" + index}
+            index={index}
             article={item.data as Article}
           />
         );
@@ -39,7 +40,10 @@ export const HomePageMainSection = () => {
             <ArticleComponent
               article={{
                 imgs: [
-                  { src: "https://placehold.co/200x120", alt: "lorem ipsum" },
+                  {
+                    src: "https://placehold.co/200x120",
+                    alt: "Video del giorno",
+                  },
                 ],
                 title:
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",

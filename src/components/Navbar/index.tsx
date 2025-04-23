@@ -174,14 +174,22 @@ const Navbar: React.FC = () => {
           <div className="d-flex align-items-center z-1">
             <NotificationBell />
             <div className="d-flex ps-3 social-btn">
-              <a href="https://www.facebook.com/gazzettino.it" className="me-3">
+              <a
+                href="https://www.facebook.com/gazzettino.it"
+                className="me-3"
+                aria-label="See on facebook"
+              >
                 <FontAwesomeIcon
                   icon={faFacebookF}
                   color="#3C5997"
                   fontSize={17}
                 />
               </a>
-              <a href="https://x.com/Gazzettino" className="me-3">
+              <a
+                href="https://x.com/Gazzettino"
+                className="me-3"
+                aria-label="See on X"
+              >
                 <FontAwesomeIcon icon={faXTwitter} color="#000" fontSize={20} />
               </a>
             </div>

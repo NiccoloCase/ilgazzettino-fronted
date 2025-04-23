@@ -1,4 +1,3 @@
-import { useDownBreakpoint } from "../../theme";
 import { Article, ArticleComponent } from "../Article";
 import { CategoryTitle } from "../CategoryTitle";
 
@@ -45,6 +44,7 @@ export const ArticleCarousel: React.FC<{
             key={index}
           >
             <ArticleComponent
+              index={index}
               article={{
                 noMargin: data.noMargin,
                 ...article,
