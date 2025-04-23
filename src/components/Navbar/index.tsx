@@ -228,7 +228,11 @@ const Navbar: React.FC = () => {
         }}
       >
         <div className="mobile-search mb-5">
-          <input type="text" placeholder="Ricerca su Il Gazzettino" />
+          <input
+            type="text"
+            placeholder="Ricerca su Il Gazzettino"
+            aria-label="Ricerca su Il Gazzettino"
+          />
           <FontAwesomeIcon icon={faSearch} />
         </div>
 

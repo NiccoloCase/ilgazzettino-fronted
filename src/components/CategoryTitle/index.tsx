@@ -9,6 +9,13 @@ type CategoryTitleProps = {
 
 export const CategoryTitle = ({ title, black, logo }: CategoryTitleProps) => {
   if (!title && !logo) return null;
+
+  const extractAlt = (src: string) => {
+    const alt = src.split(".")[src.split(".").length - 2];
+    if (alt) return alt;
+    else return "category logo";
+  };
+
   return (
     <div style={{ display: "inline-block" }} className="w-100">
       <h3
@@ -21,7 +28,7 @@ export const CategoryTitle = ({ title, black, logo }: CategoryTitleProps) => {
           width: "100%",
         }}
       >
-        {!!logo ? <img src={logo} alt="logo" height={20} /> : title}
+        {!!logo ? <img src={logo} alt={extractAlt(logo)} height={20} /> : title}
       </h3>
       <div
         style={{
