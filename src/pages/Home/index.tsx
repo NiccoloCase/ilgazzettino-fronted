@@ -45,7 +45,7 @@ export const HomePage: React.FC = () => {
       </nav>
 
       <div
-        className=" text-white text-center d-none d-md-flex justify-content-between flex-wrap"
+        className=" text-white text-center d-none d-md-flex justify-content-center flex-wrap"
         style={{
           background: palette.primary,
         }}
