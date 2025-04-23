@@ -3,12 +3,29 @@
 .HomePage {
   padding: 0 var(--padding-x) !important;
 
-  .link {
+  .hover-decoration {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .hot-link {
     color: rgb(10, 80, 118) !important;
   }
 
   .adv {
     background-color: #eeeeee;
+  }
+
+  .region-btn {
+    background-color: var(--primary);
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      background-color: rgb(10, 80, 118) !important;
+      height: 100%;
+    }
   }
 
   .main-section {
