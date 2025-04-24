@@ -679,6 +679,48 @@ export const ASIDE_NEWS = [
       ],
     },
   },
+
+  {
+    type: "article",
+    data: {
+      category: "",
+      imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+      title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      others: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+      ],
+      author: "Giovanni Verdi",
+      size: "medium",
+    },
+  },
+  {
+    type: "article",
+    data: {
+      category: "",
+      imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+      title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      others: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+      ],
+      author: "Marco Bianchi",
+      size: "medium",
+    },
+  },
+  {
+    type: "article",
+    data: {
+      category: "",
+      imgs: [{ src: "https://placehold.co/200x100", alt: "lorem ipsum" }],
+      title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      others: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium.",
+      ],
+      author: "Giovanni Bianchi",
+      size: "medium",
+    },
+  },
+
   {
     type: "article-carousel",
     data: {
