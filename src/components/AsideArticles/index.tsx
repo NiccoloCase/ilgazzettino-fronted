@@ -10,15 +10,15 @@ export const AsideArticlesComponent: React.FC<{
 }> = ({ data }) => {
   return (
     <section
-      className="aside-articles  mb-4"
+      className="aside-articles mb-4 "
       style={{
         borderBottom: "rgb(222, 222, 222) 1px solid",
       }}
-      aria-labelledby="aside-articles-heading"
+      aria-labelledby="aside-articles-heading "
     >
-      <div className="container m-0 p-0">
+      <div className="container-fluid">
         <div className="row">
-          <div className="col-md-8">
+          <div className="col-md-8 p-0">
             <h2 id="aside-articles-heading" className="visually-hidden">
               Articles
             </h2>
