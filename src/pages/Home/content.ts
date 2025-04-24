@@ -1,9 +1,10 @@
 import { Article } from "../../components/Article";
 import { ArticleCarousel } from "../../components/ArticleCarousel";
+import { AsideArticlesComponentProps } from "../../components/AsideArticles";
 
 export interface GridItem {
-  type: "article" | "article-carousel";
-  data: Article | ArticleCarousel;
+  type: "article" | "article-carousel" | "aside-articles";
+  data: Article | ArticleCarousel | AsideArticlesComponentProps;
   category: string;
 }
 
@@ -239,6 +240,11 @@ export const MAIN_NEWS = [
       ],
     },
   },
+
+  ////////////////////////////////////////////////////////////
+  /// VIDEO
+  ////////////////////////////////////////////////////////////
+
   {
     type: "article-carousel",
     data: {
@@ -276,6 +282,93 @@ export const MAIN_NEWS = [
           size: "small",
           action: "video",
           actionPosition: "center",
+        },
+      ],
+    },
+  },
+
+  ////////////////////////////////////////////////////////////
+  /// ASIDE
+  ////////////////////////////////////////////////////////////
+  {
+    type: "aside-articles",
+    data: {
+      mainArticles: [
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
+          title:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, facilis necessitatibus.",
+          size: "small",
+          others: [
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, facilis necessitatibus.",
+          ],
+        },
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          others: [
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, facilis necessitatibus.",
+          ],
+          size: "small",
+        },
+
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
+          title:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, facilis necessitatibus.",
+          size: "small",
+        },
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
+          title:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, facilis necessitatibus.",
+          size: "small",
+
+          others: [
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, facilis necessitatibus.",
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, facilis necessitatibus.",
+          ],
+        },
+        {
+          category: "",
+          imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+          size: "small",
+
+          others: [
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, facilis necessitatibus.",
+          ],
+        },
+      ],
+      asideArticles: [
+        {
+          category: "CACCIA AL JACKPOT",
+          imgs: [{ src: "https://placehold.co/220x130", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+        },
+        {
+          category: "MONITORAGGIO",
+          imgs: [{ src: "https://placehold.co/220x130", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+        },
+
+        {
+          category: "IL SISMA",
+          imgs: [{ src: "https://placehold.co/220x130", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
+        },
+        {
+          category: "USA",
+          imgs: [{ src: "https://placehold.co/220x130", alt: "lorem ipsum" }],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          size: "small",
         },
       ],
     },

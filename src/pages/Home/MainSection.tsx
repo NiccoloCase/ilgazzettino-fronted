@@ -1,5 +1,9 @@
 import { Article, ArticleComponent } from "../../components/Article";
 import { ArticleCarousel } from "../../components/ArticleCarousel";
+import {
+  AsideArticlesComponent,
+  AsideArticlesComponentProps,
+} from "../../components/AsideArticles";
 import { CategoryTitle } from "../../components/CategoryTitle";
 import VotingComponent from "../../components/VotingComponent";
 import { ASIDE_NEWS, CATEGORIES_GRID, GridItem, MAIN_NEWS } from "./content";
@@ -22,6 +26,15 @@ export const HomePageMainSection = () => {
             data={item.data as ArticleCarousel}
           />
         );
+
+      case "aside-articles":
+        return (
+          <AsideArticlesComponent
+            key={"ITEM" + index}
+            data={item.data as AsideArticlesComponentProps}
+          />
+        );
+
       default:
         return null;
     }
