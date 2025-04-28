@@ -69,14 +69,8 @@ export const HomePage: React.FC = () => {
       <HotNews />
       <HomePageMainSection />
 
-      {/* 
-      
-      TODO: active before prod
-  
-       <PromoBanner />
+      <PromoBanner />
       {!isMobile && <VideoAD />}
-      
-      */}
     </div>
   );
 };
