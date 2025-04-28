@@ -806,6 +806,20 @@ export const ASIDE_NEWS = [
   {
     type: "article-carousel",
     data: {
+      vertical: true,
+      title: "Gli inserti".toUpperCase(),
+      articles: [
+        {
+          imgs: [{ src: "/assets/gli_inserti.jpg", alt: "lorem ipsum" }],
+          hideButtons: true,
+        },
+      ],
+    },
+  },
+
+  {
+    type: "article-carousel",
+    data: {
       title: "LE PIU' CONDIVISE",
       vertical: true,
       noMargin: true,
