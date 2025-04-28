@@ -313,7 +313,6 @@ export const MAIN_NEWS = [
           ],
           size: "small",
         },
-
         {
           category: "",
           imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
@@ -327,7 +326,6 @@ export const MAIN_NEWS = [
           title:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, facilis necessitatibus.",
           size: "small",
-
           others: [
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, facilis necessitatibus.",
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, facilis necessitatibus.",
@@ -338,7 +336,6 @@ export const MAIN_NEWS = [
           imgs: [{ src: "https://placehold.co/300x200", alt: "lorem ipsum" }],
           title: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
           size: "small",
-
           others: [
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, facilis necessitatibus.",
           ],
@@ -357,7 +354,6 @@ export const MAIN_NEWS = [
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           size: "small",
         },
-
         {
           category: "IL SISMA",
           imgs: [{ src: "https://placehold.co/220x130", alt: "lorem ipsum" }],

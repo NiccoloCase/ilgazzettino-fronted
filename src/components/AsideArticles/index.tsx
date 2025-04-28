@@ -19,9 +19,9 @@ export const AsideArticlesComponent: React.FC<{
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-12 col-lg-8 p-0">
-            <h2 id="aside-articles-heading" className="visually-hidden">
+            <h1 id="aside-articles-heading" className="visually-hidden ">
               Articles
-            </h2>
+            </h1>
             {data.mainArticles.map((article, index) => (
               <article key={"main-" + index} className="mb-3">
                 <ArticleComponent
@@ -38,7 +38,7 @@ export const AsideArticlesComponent: React.FC<{
             className="col-md-4 d-lg-block d-none"
             aria-label="Related articles"
           >
-            <h3 className="visually-hidden">Related Articles</h3>
+            <h2 className="visually-hidden">Related Articles</h2>
             {data.asideArticles.map((article, index) => (
               <article key={`aside-${index}`} className="mb-3">
                 <ArticleComponent index={index} article={article} />
