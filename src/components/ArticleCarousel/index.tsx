@@ -16,7 +16,7 @@ export const ArticleCarousel: React.FC<{
   const vertical = data.vertical;
 
   return (
-    <div
+    <section
       className={"article-carousel mb-4 "}
       style={{
         borderBottom: "rgb(222, 222, 222) 1px solid",
@@ -54,6 +54,6 @@ export const ArticleCarousel: React.FC<{
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
