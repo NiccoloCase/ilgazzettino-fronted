@@ -8,7 +8,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Hamburger from "hamburger-react";
 import { faFacebookF, faXTwitter } from "@fortawesome/free-brands-svg-icons";
-import { palette } from "../../config";
 import "./Navbar.scss";
 import NotificationBell from "../NotificationBell";
 import { SearchBar } from "../SearchBar";

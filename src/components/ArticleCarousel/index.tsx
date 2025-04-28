@@ -1,3 +1,4 @@
+import { useDownBreakpoint } from "../../theme";
 import { Article, ArticleComponent } from "../Article";
 import { CategoryTitle } from "../CategoryTitle";
 
@@ -8,16 +9,20 @@ export type ArticleCarousel = {
   vertical?: boolean;
   background?: string;
   noMargin: boolean;
+  hideOnMobile?: boolean;
 };
 
 export const ArticleCarousel: React.FC<{
   data: ArticleCarousel;
 }> = ({ data }) => {
   const vertical = data.vertical;
+  const isMobile = useDownBreakpoint("md");
+
+  if (isMobile && data.hideOnMobile) return null;
 
   return (
     <section
-      className={"article-carousel mb-4 "}
+      className={"article-carousel mb-4"}
       style={{
         borderBottom: "rgb(222, 222, 222) 1px solid",
       }}

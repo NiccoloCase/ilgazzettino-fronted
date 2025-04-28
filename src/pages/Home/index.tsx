@@ -26,7 +26,7 @@ export const HomePage: React.FC = () => {
       <div className="text-center small  border-top border-bottom py-0 mt-1 d-none d-md-block">
         <span style={{ color: "#000", marginRight: "1rem" }}>Temi caldi:</span>
         {TOPICS.map((t, i) => (
-          <a href="#" key={i} className="mx-1 hot-link hover-decoration">
+          <a href="#" key={t + i} className="mx-1 hot-link hover-decoration">
             {t}
           </a>
         ))}
@@ -36,7 +36,7 @@ export const HomePage: React.FC = () => {
         {SECTIONS.map((s, i) => (
           <a
             href="#"
-            key={i}
+            key={s + i}
             className="nav-link px-2 text-dark hover-decoration"
           >
             <small>{s}</small>
@@ -51,10 +51,9 @@ export const HomePage: React.FC = () => {
         }}
       >
         {REGIONS.map((r, i) => (
-          <div className="h-100 region-btn py-2">
+          <div className="h-100 region-btn py-2" key={"REGIONE:" + r + i}>
             <a
               href="#"
-              key={i}
               className="mx-2 text-white text-uppercase small text-decoration-none"
             >
               <small>{r}</small>

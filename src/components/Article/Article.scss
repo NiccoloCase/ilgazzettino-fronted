@@ -150,6 +150,13 @@
       }
     }
   }
+
+  // On devices < medium all the texts are the same size
+  @include media-breakpoint-down(md) {
+    .news-title {
+      font-size: 1.2rem !important;
+    }
+  }
 }
 
 .bullet {

@@ -29,7 +29,6 @@ export const ArticleComponent: React.FC<{
     category,
     imgs,
     size,
-
     title,
     others,
     author,
