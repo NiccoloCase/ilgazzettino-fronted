@@ -1,15 +1,21 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
 .PromoBanner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 1rem var(--padding-x);
   background: linear-gradient(
     45deg,
     rgb(253, 204, 3) 0px,
     rgb(253, 204, 3) 100%
   );
+  max-height: 19lvh;
+
+  z-index: 200;
 
   .promo-content {
-    max-width: 1440px;
     margin: 0 auto;
 
     @include media-breakpoint-down(md) {

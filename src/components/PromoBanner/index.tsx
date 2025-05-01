@@ -22,7 +22,7 @@ export const PromoBanner = () => {
   if (!isVisible) return null;
 
   return (
-    <aside className="PromoBanner fixed-bottom" aria-label="Special promotion">
+    <aside className="PromoBanner " aria-label="Special promotion">
       <div className="promo-content d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center">
         <section aria-labelledby="promo-heading promo-subheading">
           <h2 id="promo-heading" className="h3">
